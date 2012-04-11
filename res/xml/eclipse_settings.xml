@@ -10,4 +10,9 @@
             android:title="@string/power_widgets"
             android:fragment="com.android.settings.cyanogenmod.PowerWidget" />
 
+    <PreferenceScreen
+            android:key="softkey_settings"
+            android:title="@string/navigation_bar_prefs_title"
+            android:fragment="com.android.settings.NavigationBarSettings" />
+
 </PreferenceScreen>

@@ -10,8 +10,10 @@ import java.util.List;
 public class EclipseSettings extends SettingsPreferenceFragment {
 
     private static final String POWER_WIDGETS = "power_widgets";
+    private static final String SOFTKEY_SETTINGS = "softkey_settings";
 
     PreferenceScreen mPowerWidgets;
+    PreferenceScreen mSoftkeySettings;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,7 @@ public class EclipseSettings extends SettingsPreferenceFragment {
 
         PreferenceScreen prefs = getPreferenceScreen();
 
-
+        mSoftkeySettings = (PreferenceScreen) findPreference(SOFTKEY_SETTINGS);
         mPowerWidgets = (PreferenceScreen) findPreference(POWER_WIDGETS);
 
     }
