@@ -4,6 +4,10 @@
     android:title="@string/navigation_bar_prefs_title"
     android:key="navigation_bar_prefs">
 
+    <PreferenceCategory
+	android:key="nav_settings"
+	android:title="Softkey Settings">
+
         <CheckBoxPreference
             android:key="show_menu_button"
             android:title="@string/show_menu_button_title" >
@@ -13,8 +17,15 @@
             android:key="show_search_button"
             android:title="@string/show_search_button_title" >
         </CheckBoxPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+	android:key="misc_settings"
+	android:title="Misc Settings">
 
 	<Preference
             android:key="carrier_text"
             android:title="@string/carrier_text" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

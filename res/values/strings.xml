@@ -3794,6 +3794,8 @@ found in the list of installed apps.</string>
     <string name="show_search_button_title">Show search button in nav bar</string>
     <string name="navigation_bar_prefs">SoftKeys</string>
     <string name="carrier_text">Custom Carrier Text</string>
+    <string name="navigation_bar_title">Navigation Bar Settings</string>
+    <string name="systemui_misc_title">Misc Settings</string>
 
 <!-- Power Widget #CM -->
     <string name="power_widget_title">Power widget</string>
