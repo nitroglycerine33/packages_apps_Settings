@@ -3796,6 +3796,9 @@ found in the list of installed apps.</string>
     <string name="carrier_text">Custom Carrier Text</string>
     <string name="navigation_bar_title">Navigation Bar Settings</string>
     <string name="systemui_misc_title">Misc Settings</string>
+    <string name="long_press_home_title">Long Press Home Button</string>
+    <string name="long_press_home_summary">Enables long press home to display recents and swaps recents key with search key</string>
+
 
 <!-- Power Widget #CM -->
     <string name="power_widget_title">Power widget</string>

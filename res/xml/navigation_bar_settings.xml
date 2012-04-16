@@ -8,6 +8,12 @@
 	android:key="nav_settings"
 	android:title="Softkey Settings">
 
+	<CheckBoxPreference
+	    android:key="long_press_homekey"
+	    android:title="@string/long_press_home_title"
+	    android:summary="@string/long_press_home_summary">
+	</CheckBoxPreference>
+
         <CheckBoxPreference
             android:key="show_menu_button"
             android:title="@string/show_menu_button_title" >
