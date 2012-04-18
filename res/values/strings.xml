@@ -3805,9 +3805,12 @@ found in the list of installed apps.</string>
 <!-- Input Settings -->
     <string name="pref_volume_wake_title">Volume rocker wake</string>
     <string name="pref_volume_wake_summary">Pressing the volume up/down wakes the device</string>
+<!-- Setting for volume rocker music controls -->
+    <string name="volbtn_music_controls_title">Volume rocker music controls</string>
+    <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
 
 <!-- Profiles - Quiet hours -->
-    <string name="quiet_hours_title">Quiet hours</string>
+    <string name="quiet_hours_title">Quiet Hours</string>
     <string name="quiet_hours_summary">View or change the hours the device should be quiet</string>
     <string name="quiet_hours_note_title">Note</string>
     <string name="quiet_hours_note_summary">Incoming calls will behave like usual during quiet hours</string>
