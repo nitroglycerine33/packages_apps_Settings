@@ -11,9 +11,13 @@ public class EclipseSettings extends SettingsPreferenceFragment {
 
     private static final String POWER_WIDGETS = "power_widgets";
     private static final String SOFTKEY_SETTINGS = "softkey_settings";
+    private static final String GENERAL_SETTINGS = "general_settings";
+    private static final String KEY_QUIET_HOURS = "quiet_hours";
 
     PreferenceScreen mPowerWidgets;
     PreferenceScreen mSoftkeySettings;
+    PreferenceScreen mGeneralSettings;
+    PreferenceScreen mQuietHours;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,8 @@ public class EclipseSettings extends SettingsPreferenceFragment {
 
         mSoftkeySettings = (PreferenceScreen) findPreference(SOFTKEY_SETTINGS);
         mPowerWidgets = (PreferenceScreen) findPreference(POWER_WIDGETS);
+	mGeneralSettings = (PreferenceScreen) findPreference(GENERAL_SETTINGS);
+	mQuietHours = (PreferenceScreen) findPreference(KEY_QUIET_HOURS);
 
     }
 }

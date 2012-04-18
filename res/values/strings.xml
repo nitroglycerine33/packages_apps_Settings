@@ -3802,6 +3802,10 @@ found in the list of installed apps.</string>
 <!-- General Settings -->
     <string name="general_settings">General Settings</string>
 
+<!-- Input Settings -->
+    <string name="pref_volume_wake_title">Volume rocker wake</string>
+    <string name="pref_volume_wake_summary">Pressing the volume up/down wakes the device</string>
+
 <!-- Profiles - Quiet hours -->
     <string name="quiet_hours_title">Quiet hours</string>
     <string name="quiet_hours_summary">View or change the hours the device should be quiet</string>
