@@ -23,6 +23,12 @@
             android:key="show_search_button"
             android:title="@string/show_search_button_title" >
         </CheckBoxPreference>
+
+	<CheckBoxPreference
+	    android:key="kill_app_longpress_back"
+	    android:title="@string/kill_app_longpress_back"
+	    android:summary="@string/kill_app_longpress_back_summary"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory

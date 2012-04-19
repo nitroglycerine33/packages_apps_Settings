@@ -21,11 +21,13 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
     private static final String PREF_CARRIER_TEXT = "carrier_text";
     private static final String LONG_PRESS_HOMEKEY = "long_press_homekey";
     private static final String PREF_IME_SWITCHER = "ime_switcher";
+    private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private CheckBoxPreference mShowMenuButton;
     private CheckBoxPreference mShowSearchButton;
     private Preference mCarrier;
     private CheckBoxPreference mLongPressHome;
     private CheckBoxPreference mShowImeSwitcher;
+    private CheckBoxPreference mKillAppLongpressBack;
 
     String mCarrierText = null;
 
@@ -48,6 +50,10 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
             Settings.System.SHOW_SEARCH_BUTTON, 0) == 1);
 	updateLongPressToggle(mShowSearchButton.isChecked());
 	updateSearchToggle(mLongPressHome.isChecked());
+
+	mKillAppLongpressBack = (CheckBoxPreference) prefSet.findPreference(KILL_APP_LONGPRESS_BACK);
+	mKillAppLongpressBack.setChecked(Settings.Secure.getInt(getContentResolver(),
+	    Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) == 1);
 
 	mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
 	mShowImeSwitcher.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -99,6 +105,11 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
                 Settings.System.LONG_PRESS_HOME, value ? 1 : 0);
             updateSearchToggle(value);
             return true;
+	} else if (preference == mKillAppLongpressBack) {
+	    value = mKillAppLongpressBack.isChecked();
+	    Settings.Secure.putInt(getContentResolver(),
+		Settings.Secure.KILL_APP_LONGPRESS_BACK, value ? 1 : 0);
+	    return true;
 	} else if (preference == mShowImeSwitcher) {
 	    boolean checked = ((CheckBoxPreference) preference).isChecked();
 	    Settings.System.putInt(getActivity().getContentResolver(),
