@@ -20,10 +20,12 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
     private static final String SHOW_SEARCH_BUTTON = "show_search_button";
     private static final String PREF_CARRIER_TEXT = "carrier_text";
     private static final String LONG_PRESS_HOMEKEY = "long_press_homekey";
+    private static final String PREF_IME_SWITCHER = "ime_switcher";
     private CheckBoxPreference mShowMenuButton;
     private CheckBoxPreference mShowSearchButton;
     private Preference mCarrier;
     private CheckBoxPreference mLongPressHome;
+    private CheckBoxPreference mShowImeSwitcher;
 
     String mCarrierText = null;
 
@@ -46,6 +48,10 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
             Settings.System.SHOW_SEARCH_BUTTON, 0) == 1);
 	updateLongPressToggle(mShowSearchButton.isChecked());
 	updateSearchToggle(mLongPressHome.isChecked());
+
+	mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
+	mShowImeSwitcher.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+	    Settings.System.SHOW_STATUSBAR_IME_SWITCHER, 0) == 1);
 
 	mCarrier = (Preference) prefSet.findPreference(PREF_CARRIER_TEXT);
 	updateCarrierText();
@@ -93,6 +99,11 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
                 Settings.System.LONG_PRESS_HOME, value ? 1 : 0);
             updateSearchToggle(value);
             return true;
+	} else if (preference == mShowImeSwitcher) {
+	    boolean checked = ((CheckBoxPreference) preference).isChecked();
+	    Settings.System.putInt(getActivity().getContentResolver(),
+		Settings.System.SHOW_STATUSBAR_IME_SWITCHER, checked ? 1 : 0);
+	    return true;
         } else if (preference == mCarrier) {
             AlertDialog.Builder ad = new AlertDialog.Builder(getActivity());
             ad.setTitle("Custom Carrier Text");
