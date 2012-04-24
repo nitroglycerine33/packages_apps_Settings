@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/systemui_prefs_title"
+    android:key="systemui_prefs">
+
+    <PreferenceCategory
+            android:key="clock_category"
+            android:title="Clock Settings">
+        <ListPreference
+            android:key="clock_style"
+            android:entries="@array/clock_entries"
+            android:entryValues="@array/clock_values"
+            android:title="@string/clock_style_title" />
+
+        <ListPreference
+            android:key="clock_am_pm"
+            android:entries="@array/am_pm_entries"
+            android:entryValues="@array/am_pm_values"
+            android:title="@string/am_pm_style_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+	android:key="misc_settings"
+	android:title="Misc Settings">
+
+	<CheckBoxPreference
+	    android:key="ime_switcher"
+	    android:title="Show IME Switcher"
+	    android:summary="In statusbar, while typing (requires reboot)" />
+
+	<Preference
+            android:key="carrier_text"
+            android:title="@string/carrier_text" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

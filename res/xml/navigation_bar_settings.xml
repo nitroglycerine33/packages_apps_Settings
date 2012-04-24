@@ -31,18 +31,4 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-	android:key="misc_settings"
-	android:title="Misc Settings">
-
-	<CheckBoxPreference
-	    android:key="ime_switcher"
-	    android:title="Show IME Switcher"
-	    android:summary="In statusbar, while typing (requires reboot)" />
-
-	<Preference
-            android:key="carrier_text"
-            android:title="@string/carrier_text" />
-    </PreferenceCategory>
-
 </PreferenceScreen>

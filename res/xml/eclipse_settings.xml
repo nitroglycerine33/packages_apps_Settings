@@ -18,15 +18,21 @@
             android:fragment="com.android.settings.cyanogenmod.PowerWidget" />
 
     <PreferenceScreen
+            android:key="softkey_settings"
+	    android:icon="@drawable/ic_eclipse_navbar"
+            android:title="@string/navigation_bar_prefs_title"
+            android:fragment="com.android.settings.NavigationBarSettings" />
+
+    <PreferenceScreen
+            android:key="systemui_settings"
+	    android:icon="@drawable/ic_eclipse_systemui"
+            android:title="@string/systemui_prefs_title"
+            android:fragment="com.android.settings.SystemUISettings" />
+
+    <PreferenceScreen
             android:key="quiet_hours"
 	    android:icon="@drawable/ic_eclipse_quiet"
             android:title="@string/quiet_hours_title"
 	    android:fragment="com.android.settings.cyanogenmod.QuietHours" />
-
-    <PreferenceScreen
-            android:key="softkey_settings"
-	    android:icon="@drawable/ic_eclipse_systemui"
-            android:title="@string/navigation_bar_prefs_title"
-            android:fragment="com.android.settings.NavigationBarSettings" />
 
 </PreferenceScreen>

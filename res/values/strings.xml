@@ -3789,13 +3789,18 @@ found in the list of installed apps.</string>
     <string name="power_widgets">Power Widgets</string>
 
 <!-- SystemUI settings -->
-    <string name="navigation_bar_prefs_title">SystemUI Settings</string>
+    <string name="systemui_misc_title">Misc Settings</string>
+    <string name="systemui_prefs_title">SystemUI Settings</string>
+    <string name="carrier_text">Custom Carrier Text</string>
+    <string name="clock_style_title">Clock style</string>
+    <string name="am_pm_style_title">AM PM style</string>
+
+<!-- Navbar settings -->
+    <string name="navigation_bar_prefs_title">Nav Bar Settings</string>
     <string name="show_menu_button_title">Show menu button in nav bar</string>
     <string name="show_search_button_title">Show search button in nav bar</string>
     <string name="navigation_bar_prefs">SoftKeys</string>
-    <string name="carrier_text">Custom Carrier Text</string>
     <string name="navigation_bar_title">Navigation Bar Settings</string>
-    <string name="systemui_misc_title">Misc Settings</string>
     <string name="long_press_home_title">Long Press Home Button</string>
     <string name="long_press_home_summary">Enables long press home to display recents and swaps recents key with search key</string>
 
@@ -3810,6 +3815,7 @@ found in the list of installed apps.</string>
 <!-- Input Settings -->
     <string name="pref_volume_wake_title">Volume rocker wake</string>
     <string name="pref_volume_wake_summary">Pressing the volume up/down wakes the device</string>
+
 <!-- Setting for volume rocker music controls -->
     <string name="volbtn_music_controls_title">Volume rocker music controls</string>
     <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
