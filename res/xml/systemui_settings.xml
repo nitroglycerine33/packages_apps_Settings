@@ -5,6 +5,42 @@
     android:key="systemui_prefs">
 
     <PreferenceCategory
+            android:key="battery_category"
+            android:title="Battery Settings">
+
+        <ListPreference
+            android:key="battery_style"
+            android:entries="@array/battery_entries"
+            android:entryValues="@array/battery_values"
+            android:title="@string/battery_types" />
+
+        <CheckBoxPreference
+            android:key="battery_text"
+            android:title="Use Battery Text" >
+        </CheckBoxPreference>
+
+        <PreferenceScreen
+            android:key="battery_text_color"
+            android:title="@string/battery_text_color">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.android.settings.BatteryTextColor"
+                android:targetPackage="com.android.settings" />
+        </PreferenceScreen>
+
+        <CheckBoxPreference
+            android:key="battery_bar"
+            android:title="@string/battery_bar" >
+        </CheckBoxPreference>
+
+	<com.android.settings.util.colorpicker.ColorPickerPreference
+		android:key="battery_bar_color" 
+		android:title="@string/battery_bar_color" 
+		android:defaultValue="#33B5E5" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
             android:key="clock_category"
             android:title="Clock Settings">
         <ListPreference
