@@ -13,16 +13,20 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 import android.text.Spannable;
 
+import com.android.settings.util.colorpicker.ColorPickerPreference;
+
 public class NavigationBarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String SHOW_MENU_BUTTON = "show_menu_button";
     private static final String SHOW_SEARCH_BUTTON = "show_search_button";
     private static final String LONG_PRESS_HOMEKEY = "long_press_homekey";
     private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
+    private static final String SOFTKEY_COLOR = "softkey_color";
     private CheckBoxPreference mShowMenuButton;
     private CheckBoxPreference mShowSearchButton;
     private CheckBoxPreference mLongPressHome;
     private CheckBoxPreference mKillAppLongpressBack;
+    private ColorPickerPreference mSoftKeyColor;
 
     String mCarrierText = null;
 
@@ -49,6 +53,9 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
 	mKillAppLongpressBack = (CheckBoxPreference) prefSet.findPreference(KILL_APP_LONGPRESS_BACK);
 	mKillAppLongpressBack.setChecked(Settings.Secure.getInt(getContentResolver(),
 	    Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) == 1);
+
+        mSoftKeyColor = (ColorPickerPreference) prefSet.findPreference(SOFTKEY_COLOR);
+        mSoftKeyColor.setOnPreferenceChangeListener(this);
     }
 
     private void updateSearchToggle(boolean bool) {
@@ -94,6 +101,15 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mSoftKeyColor) {
+            String hexColor = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                    .valueOf(newValue)));
+            preference.setSummary(hexColor);
+            int color = ColorPickerPreference.convertToColorInt(hexColor);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SOFT_KEY_COLOR, color);
+            return true;
+	}
         return false;
     }
 }
