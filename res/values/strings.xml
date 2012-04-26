@@ -3794,6 +3794,7 @@ found in the list of installed apps.</string>
     <string name="carrier_text">Custom Carrier Text</string>
     <string name="clock_style_title">Clock style</string>
     <string name="am_pm_style_title">AM PM style</string>
+    <string name="clock_color">Clock Color</string>
 
 <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

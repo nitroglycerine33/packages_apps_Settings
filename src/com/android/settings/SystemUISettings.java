@@ -28,6 +28,7 @@ public class SystemUISettings extends SettingsPreferenceFragment implements OnPr
     private static final String BATTERY_BAR = "battery_bar";
     private static final String BATTERY_BAR_COLOR = "battery_bar_color";
     private static final String BATTERY_TEXT_COLOR = "battery_text_color";
+    private static final String CLOCK_COLOR = "clock_color";
     private Preference mCarrier;
     private CheckBoxPreference mShowImeSwitcher;
     private ListPreference mAmPmStyle;
@@ -36,6 +37,7 @@ public class SystemUISettings extends SettingsPreferenceFragment implements OnPr
     private CheckBoxPreference mBattBar;
     private ColorPickerPreference mBattBarColor;
     private ListPreference mBatteryStyle;
+    private ColorPickerPreference mClockColor;
 
     String mCarrierText = null;
     PreferenceScreen mBattColor;
@@ -48,6 +50,9 @@ public class SystemUISettings extends SettingsPreferenceFragment implements OnPr
 
         mClockStyle = (ListPreference) prefSet.findPreference(PREF_CLOCK_STYLE);
         mAmPmStyle = (ListPreference) prefSet.findPreference(PREF_CLOCK_DISPLAY_STYLE);
+
+	mClockColor = (ColorPickerPreference) prefSet.findPreference(CLOCK_COLOR);
+	mClockColor.setOnPreferenceChangeListener(this);
 
         mBattText = (CheckBoxPreference) prefSet.findPreference(BATTERY_TEXT);
         mBattText.setChecked(Settings.System.getInt(getContentResolver(),
@@ -164,6 +169,13 @@ public class SystemUISettings extends SettingsPreferenceFragment implements OnPr
             int val = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(),
                 Settings.System.STATUS_BAR_CLOCK, val);
+            return true;
+        } else if (preference == mClockColor) {
+            String hexColor = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hexColor);
+            int color = ColorPickerPreference.convertToColorInt(hexColor);
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.CLOCK_COLOR, color);
             return true;
         } else if (preference == mBatteryStyle) {
             int val = Integer.valueOf((String) newValue);
