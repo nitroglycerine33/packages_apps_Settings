@@ -3798,6 +3798,14 @@ found in the list of installed apps.</string>
     <string name="toggle_color">Toggle Color Picker</string>
     <string name="widget_color_title">Power Widget Color Picker</string>
 
+<!-- LED Controls -->
+    <string name="led_settings">LED Settings</string>
+    <string name="title_led_on">LED pulse ON duration</string>
+    <string name="summary_led_on">@null</string>
+    <string name="title_led_off">LED pulse OFF duration</string>
+    <string name="summary_led_off">@null</string>
+    <string name="led_color_title">LED color</string>
+
 <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on Color to apply</string>   
