@@ -3837,6 +3837,9 @@ found in the list of installed apps.</string>
     <string name="long_press_home_summary">Enables long press home to display recents and swaps recents key with search key</string>
     <string name="softkey_color">Soft Key Icon Color</string>
 
+<!-- Themes settings #CM -->
+    <string name="themes_settings_title">Themes</string>
+
 <!-- UI debug setting: kill app long-press back [CHAR LIMIT=25] -->
     <string name="kill_app_longpress_back">Kill App Back Button</string>
 <!-- UI debug settting: kill app long-press back [CHAR LIMIT=50] -->

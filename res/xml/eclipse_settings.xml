@@ -12,6 +12,16 @@
             android:fragment="com.android.settings.GeneralSettings" />
 
     <PreferenceScreen
+        android:key="themes_settings"
+        android:icon="@drawable/ic_settings_themes"
+        android:title="@string/themes_settings_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.tmobile.themechooser"
+            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
             android:key="power_widgets"
 	    android:icon="@drawable/ic_eclipse_widget"
             android:title="@string/power_widgets"
