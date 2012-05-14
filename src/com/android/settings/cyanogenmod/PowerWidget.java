@@ -46,7 +46,6 @@ import com.android.internal.telephony.Phone;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.cyanogenmod.TouchInterceptor;
-import com.android.settings.util.colorpicker.ColorPickerPreference;
 
 public class PowerWidget extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -81,8 +80,6 @@ public class PowerWidget extends SettingsPreferenceFragment implements
     private PreferenceScreen mPowerPicker;
 
     private PreferenceScreen mPowerOrder;
-    
-    private ColorPickerPreference mWidgetColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -103,9 +100,6 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             mPowerWidgetHapticFeedback = (ListPreference) prefSet
                     .findPreference(UI_EXP_WIDGET_HAPTIC_FEEDBACK);
             mPowerWidgetHapticFeedback.setOnPreferenceChangeListener(this);
-            mWidgetColor = (ColorPickerPreference) prefSet
-            		.findPreference(UI_WIDGET_COLOR);
-            mWidgetColor.setOnPreferenceChangeListener(this);
 
             mPowerPicker = (PreferenceScreen) prefSet.findPreference(UI_EXP_WIDGET_PICKER);
             mPowerOrder = (PreferenceScreen) prefSet.findPreference(UI_EXP_WIDGET_ORDER);
@@ -133,14 +127,6 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             int intValue = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.EXPANDED_HAPTIC_FEEDBACK, intValue);
-            return true;
-        } else if (preference == mWidgetColor) {
-        	String hexColor = ColorPickerPreference.convertToARGB(Integer.valueOf(String
-                    .valueOf(newValue)));
-            preference.setSummary(hexColor);
-            int color = ColorPickerPreference.convertToColorInt(hexColor);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.EXPANDED_VIEW_WIDGET_COLOR, color);
             return true;
         }
         return false;

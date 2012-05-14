@@ -18,8 +18,27 @@
 	    android:key="volbtn_music_controls"
 	    android:title="@string/volbtn_music_controls_title"
 	    android:summary="@string/volbtn_music_controls_summary"
-	     android:persistent="false" />
+	    android:persistent="false" />
+
+	<CheckBoxPreference
+	    android:key="kill_app_longpress_back"
+	    android:title="@string/kill_app_longpress_back"
+	    android:summary="@string/kill_app_longpress_back_summary"
+	    android:persistent="false" />
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+	android:key="misc_settings"
+	android:title="Misc Settings">
+
+	<CheckBoxPreference
+	    android:key="ime_switcher"
+	    android:title="Show IME Switcher"
+	    android:summary="In statusbar, while typing (requires reboot)" />
+
+	<Preference
+            android:key="carrier_text"
+            android:title="@string/carrier_text" />
+    </PreferenceCategory>
 </PreferenceScreen>

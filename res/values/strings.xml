@@ -3792,7 +3792,7 @@ found in the list of installed apps.</string>
 
 <!-- SystemUI settings -->
     <string name="systemui_misc_title">Misc Settings</string>
-    <string name="systemui_prefs_title">SystemUI Settings</string>
+    <string name="systemui_prefs_title">Statusbar Settings</string>
     <string name="carrier_text">Custom Carrier Text</string>
     <string name="clock_style_title">Clock style</string>
     <string name="am_pm_style_title">AM PM style</string>
@@ -3829,15 +3829,37 @@ found in the list of installed apps.</string>
     <string name="battery_text_normal">Battery Color (Above 15%)</string>
     <string name="battery_text_low">Battery Color (Below 15%)</string>
 
-<!-- Navbar settings -->
-    <string name="navigation_bar_prefs_title">Nav Bar Settings</string>
-    <string name="show_menu_button_title">Show menu button in nav bar</string>
-    <string name="show_search_button_title">Show search button in nav bar</string>
+<!-- Color settings -->
+    <string name="color_prefs_title">Color Control</string>
     <string name="navigation_bar_prefs">SoftKeys</string>
-    <string name="navigation_bar_title">Navigation Bar Settings</string>
-    <string name="long_press_home_title">Long Press Home Button</string>
-    <string name="long_press_home_summary">Enables long press home to display recents and swaps recents key with search key</string>
     <string name="softkey_color">Soft Key Icon Color</string>
+
+<!-- Navigation Bar #CM -->
+    <string name="navigation_bar_title">Navigation Bar Buttons</string>
+    <string name="first_panel_text">
+    &#8226; To begin modifying the navigation bar, please press the unlock icon near the top right of this screen.\n\n
+    &#8226; If the icon shows the lock in the \"off\" position, you will not be able to modify the navigation bar.\n\n
+    &#8226; If the icon shows the lock in the \"on\" position, you can freely modify the selection of on screen buttons.\n\n
+    &#8226; Once in edit mode, empty placeholders will be revealed and turned into + icons that can be modified.</string>
+    <string name="second_panel_text">\n
+    Click on any of the available buttons to assign or modify functionality.
+    </string>
+    <string name="third_panel_text">
+    &#8226; Choose an action to assign to the currently selected button.\n
+    &#8226; Already assigned actions will appear dimmer in the list and cannot be assigned again.\n
+    &#8226; To assign an already selected action to another location, set it\'s previous location to \"Empty button\".\n
+    </string>
+    <string name="fourth_panel_text">\n
+    &#8226; The navigation bar will automatically update and display the newly selected layout and actions.\n\n
+    &#8226; You can choose to edit multiple locations, or press the lock icon to save the changes and make it permanent.\n\n
+    </string>
+    <string name="bottom_panel_tips">
+    &#8226; Each action can only be assigned to one button at a time.\n\n
+    &#8226; Menu actions can only be assigned to the smaller, side buttons.\n\n
+    &#8226; To rearrange your current layout, long press the selected action and drag it to it\'s preferred location.
+    </string>
+    <string name="navigation_bar_guide_title">Navigation Bar Guide</string>
+    <string name="navigation_bar_tips_title">Quick tips</string>
 
 <!-- Themes settings #CM -->
     <string name="themes_settings_title">Themes</string>
