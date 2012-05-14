@@ -17,7 +17,7 @@ import com.android.settings.util.colorpicker.ColorPickerPreference;
 
 import java.util.List;
 
-public class NavigationBarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class ColorControlSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     
     private static final String SOFTKEY_COLOR = "softkey_color";
@@ -35,7 +35,7 @@ public class NavigationBarSettings extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.navigation_bar_settings);
+        addPreferencesFromResource(R.xml.color_control_settings);
         PreferenceScreen prefSet = getPreferenceScreen();
 
 	mClockColor = (ColorPickerPreference) prefSet.findPreference(CLOCK_COLOR);
