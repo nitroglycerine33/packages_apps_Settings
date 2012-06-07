@@ -813,7 +813,7 @@
 		<item>4</item>
 	</string-array>
 	<string-array name="battery_entries">
-		<item>Stock Battery With %</item>
+		<item>Digital Battery</item>
 		<item>Stock Battery Without %</item>
 		<item>Skinny Bar Battery with %</item>
 		<item>Circle Battery</item>
