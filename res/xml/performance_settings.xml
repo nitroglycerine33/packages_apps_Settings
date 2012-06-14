@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/kernel_information_title">
+    <Preference
+            android:key="current_kernel"
+            style="?android:preferenceScreenStyle"
+            android:title="@string/current_kernel_title"
+            android:selectable="false"/>
+    <Preference
+            android:key="current_cpu_speed"
+            style="?android:preferenceScreenStyle"
+            android:title="@string/current_cpu_speed_title"
+            android:selectable="false"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/cpu_settings_title"
+        android:key="cpu">
+            
+    <ListPreference
+            android:key="min_freq_preference"
+            android:dialogTitle="@string/cpu_min_freq_title"
+            android:title="@string/cpu_min_freq_title"
+            android:summary="Minimum CPU frequency" />
+
+    <ListPreference
+            android:key="max_freq_preference"
+            android:dialogTitle="@string/cpu_max_freq_title"
+            android:title="@string/cpu_max_freq_title"
+            android:summary="Maximum CPU frequency" />
+
+    <ListPreference
+            android:key="gov_preference"
+            android:dialogTitle="@string/cpu_governors_title"
+            android:title="@string/cpu_governors_title" />
+
+    <ListPreference
+            android:key="io_preference"
+            android:dialogTitle="@string/io_scheduler_title"
+            android:title="@string/io_scheduler_title" />
+
+    <CheckBoxPreference
+            android:key="sob_preference"
+            android:title="@string/cpu_set_on_boot"
+            android:summary="@string/cpu_set_on_boot_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/advanced_settings_voltage"
+            android:key="advanced_settings">
+    <PreferenceScreen
+            android:key="voltage_settings"
+            android:title="@string/voltage_settings"
+            android:summary="@string/voltage_settings_summary" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.android.settings.VoltageControlSettings" />
+    </PreferenceScreen>
+
+    <com.android.settings.GammaTuningPreference
+            android:key="gamma_tuning"
+            android:title="@string/gamma_tuning_title"
+            android:summary="@string/gamma_tuning_summary" />
+                    
+    </PreferenceCategory>
+</PreferenceScreen>

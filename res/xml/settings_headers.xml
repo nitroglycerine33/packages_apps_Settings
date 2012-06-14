@@ -68,6 +68,13 @@
         android:title="@string/eclipse_interface_title"
         android:fragment="com.android.settings.EclipseSettings" />
 
+    <!-- Performance -->
+    <header
+        android:id="@+id/performance_settings"
+        android:fragment="com.android.settings.PerformanceSettings"
+        android:icon="@drawable/ic_eclipse_kernel"
+        android:title="@string/kernel_settings_title" />
+	
     <!-- Launcher -->
     <header
         android:id="@+id/launcher_settings"

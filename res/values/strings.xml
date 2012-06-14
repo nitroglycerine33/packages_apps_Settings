@@ -3789,6 +3789,8 @@ found in the list of installed apps.</string>
     <string name="eclipse_launcher_title">Apex Launcher</string>
     <string name="power_widgets">Power Widgets</string>
     <string name="lockscreens">Lockscreens</string>
+    <string name="performance_prefs_title">Performance</string>
+
 
 <!-- SystemUI settings -->
     <string name="systemui_misc_title">Misc Settings</string>
@@ -3908,6 +3910,40 @@ found in the list of installed apps.</string>
 <!-- time range preference -->
     <string name="start_time_title">Start</string>
     <string name="end_time_title">End</string>
+    
+<!-- Kernel Settings -->
+    <string name="cpu_settings_title">CPU settings</string>
+    <string name="kernel_settings_title">Kernel Settings</string>
+    <string name="cpu_title">Kernel Settings</string>
+    <string name="kernel_information_title">Kernel Information</string>
+    <string name="current_kernel_title">Current kernel info</string>
+    <string name="current_cpu_speed_title">Current CPU speed</string>
+    <string name="advanced_settings_voltage">Advanced settings</string>
+    <string name="cpu_summary">Governor and clock settings</string>
+    <string name="cpu_governors_title">Available governors</string>
+    <string name="cpu_governors_summary">List of available governors\nCurrently selected: %S</string>
+    <string name="io_scheduler_title">Available IO schedulers</string>
+    <string name="io_scheduler_summary">List of available IO schedulers \nCurrently selected: %S</string>
+    <string name="cpu_min_freq_title">Min CPU frequency</string>
+    <string name="cpu_min_freq_summary">Minimum CPU frequency\nCurrently: %s</string>
+    <string name="cpu_max_freq_title">Max CPU frequency</string>
+    <string name="cpu_max_freq_summary">Maximum CPU frequency\nCurrently: %s</string>
+    <string name="cpu_set_on_boot">Set on boot</string>
+    <string name="cpu_set_on_boot_summary">Restore CPU settings on boot</string>
+    <string name="voltage_settings">Voltage settings</string>
+    <string name="voltage_settings_summary">Fine tune kernel voltage settings</string>
+    <string name="error_values">Error getting values</string>
+    <string name="apply_values">Apply values</string>
+    <string name="freq">Frequency</string>
+    <string name="current">mV current</string>
+    <string name="saved">mV saved</string>
+
+   <!-- Gamma Control -->
+    <string name="gamma_tuning_title">Color gamma tuning</string>
+    <string name="gamma_tuning_summary">Calibrate gamma color correction</string>
+    <string name="color_red_title">Red</string>
+    <string name="color_green_title">Green</string>
+    <string name="color_blue_title">Blue</string>
 
 <!-- Power Widget #CM -->
     <string name="power_widget_title">Power widget</string>
