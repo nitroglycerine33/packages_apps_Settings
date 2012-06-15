@@ -1318,7 +1318,7 @@
 
 	<activity android:name="BatteryTextColor"
 	    android:label="@string/battery_text_color"
-	    android:screenOrientation="portrait">
+	    android:screenOrientation="portrait" />
 
         <activity android:name="com.android.settings.VoltageControlSettings"
             android:label="@string/voltage_settings">
