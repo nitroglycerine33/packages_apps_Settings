@@ -3790,7 +3790,10 @@ found in the list of installed apps.</string>
     <string name="power_widgets">Power Widgets</string>
     <string name="lockscreens">Lockscreens</string>
     <string name="performance_prefs_title">Performance</string>
+    <string name="weather_title">Weather Settings</string>
 
+<!--Weather Settings -->
+    <string name="weatherclock_title">Sense Clock Settings</string>
 
 <!-- SystemUI settings -->
     <string name="systemui_misc_title">Misc Settings</string>
