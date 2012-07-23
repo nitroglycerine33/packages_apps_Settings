@@ -57,6 +57,16 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
+    <!-- ECLIPSE SETTINGS -->
+    <header android:title="@string/header_category_eclipse" />
+
+    <!-- System -->
+    <header
+        android:id="@+id/eclipse_settings"
+        android:icon="@drawable/ic_settings_system"
+        android:fragment="com.android.settings.EclipseSettings"
+        android:title="@string/system_settings_title" />
+
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />
 

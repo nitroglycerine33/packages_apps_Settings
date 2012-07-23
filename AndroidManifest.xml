@@ -1205,7 +1205,7 @@
 
         <activity android:name="ActivityPicker"
                 android:label="@string/activity_picker_label"
-                android:theme="@*android:style/Theme.Dialog.Alert"
+                android:theme="@*android:style/Theme.Holo.Dialog.Alert"
                 android:finishOnCloseSystemDialogs="true">
             <intent-filter>
                 <action android:name="android.intent.action.PICK_ACTIVITY" />
@@ -1432,6 +1432,10 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
+        <activity android:name=".cyanogenmod.PowerWidget" />
+
+        <activity android:name=".cyanogenmod.TabletPowerWidget" />
+        <activity android:name=".cyanogenmod.SystemSettings" />
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">
