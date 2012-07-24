@@ -31,6 +31,9 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.android.settings.util.colorpicker.ColorPickerPreference;
+
+
 public class StatusBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
@@ -41,6 +44,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String COMBINED_BAR_AUTO_HIDE = "combined_bar_auto_hide";
     private static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
     private static final String STATUS_BAR_CATEGORY_GENERAL = "status_bar_general";
+    private static final String BATTERY_TEXT = "battery_text";
+    private static final String BATTERY_BAR = "battery_bar";
+    private static final String BATTERY_BAR_COLOR = "battery_bar_color";
+    private static final String BATTERY_TEXT_COLOR = "battery_text_color";
 
     private ListPreference mStatusBarAmPm;
     private ListPreference mStatusBarBattery;
@@ -50,6 +57,11 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private CheckBoxPreference mCombinedBarAutoHide;
     private CheckBoxPreference mStatusBarNotifCount;
     private PreferenceCategory mPrefCategoryGeneral;
+    private CheckBoxPreference mBattText;
+    private CheckBoxPreference mBattBar;
+    private ColorPickerPreference mBattBarColor;
+
+    PreferenceScreen mBattColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +82,21 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                 Settings.System.STATUS_BAR_CLOCK, 1) == 1));
         mStatusBarBrightnessControl.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
+
+        mBattText = (CheckBoxPreference) prefSet.findPreference(BATTERY_TEXT);
+        mBattText.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.BATTERY_TEXT, 0) == 1);
+
+        mBattBar = (CheckBoxPreference) prefSet.findPreference(BATTERY_BAR);
+        mBattBar.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUSBAR_BATTERY_BAR, 0) == 1);
+
+        mBattColor = (PreferenceScreen) findPreference(BATTERY_TEXT_COLOR);
+        mBattColor.setEnabled(mBattText.isChecked());
+
+        mBattBarColor = (ColorPickerPreference) prefSet.findPreference(BATTERY_BAR_COLOR);
+        mBattBarColor.setOnPreferenceChangeListener(this);
+        mBattBarColor.setEnabled(mBattBar.isChecked());
 
         try {
             if (Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(), 
@@ -124,6 +151,20 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         }
     }
 
+    private void updateBatteryTextToggle(boolean bool) {
+        if (bool)
+            mBattColor.setEnabled(true);
+        else
+            mBattColor.setEnabled(false);
+    }
+
+    private void updateBatteryBarToggle(boolean bool) {
+        if (bool)
+            mBattBarColor.setEnabled(true);
+        else
+            mBattBarColor.setEnabled(false);
+    }
+
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mStatusBarAmPm) {
             int statusBarAmPm = Integer.valueOf((String) newValue);
@@ -145,6 +186,14 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUS_BAR_SIGNAL_TEXT, signalStyle);
             mStatusBarCmSignal.setSummary(mStatusBarCmSignal.getEntries()[index]);
+            return true;
+	} else if (preference == mBattBarColor) {
+            String hexColor = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                    .valueOf(newValue)));
+            preference.setSummary(hexColor);
+            int color = ColorPickerPreference.convertToColorInt(hexColor);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUSBAR_BATTERY_BAR_COLOR, color);
             return true;
         }
         return false;
@@ -172,6 +221,18 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             value = mStatusBarNotifCount.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUS_BAR_NOTIF_COUNT, value ? 1 : 0);
+            return true;
+	} else if (preference == mBattText) {
+            value = mBattText.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.BATTERY_TEXT, value ? 1 : 0);
+            updateBatteryTextToggle(value);
+            return true;
+        } else if (preference == mBattBar) {
+            value = mBattBar.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUSBAR_BATTERY_BAR, value ? 1 : 0);
+            updateBatteryBarToggle(value);
             return true;
         }
         return false;
