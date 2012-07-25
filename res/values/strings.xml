@@ -4112,6 +4112,10 @@
     <string name="system_settings_title">System</string>
     <string name="system_interface_title">System interface</string>
 
+    <!-- General settings  -->
+    <string name="carrier_text">Custom Carrier Text</string>
+    <string name="general_settings">General Settings</string>
+
     <!-- Notification Drawer  -->
     <string name="notification_drawer_title">Power Widgets/Toggles</string>
 

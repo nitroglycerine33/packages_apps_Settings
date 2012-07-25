@@ -1441,9 +1441,9 @@
         />
 
         <activity android:name=".cyanogenmod.PowerWidget" />
-
         <activity android:name=".cyanogenmod.TabletPowerWidget" />
         <activity android:name=".cyanogenmod.SystemSettings" />
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">
