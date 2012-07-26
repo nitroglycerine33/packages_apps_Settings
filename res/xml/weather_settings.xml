@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/eclipse_settings_title"
+    android:key="weather_settings"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceScreen
+        android:key="weather_settings"
+        android:title="@string/weatherclock_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="fr.clockwidget.lpsense"
+            android:targetClass="fr.clockwidget.lpsense.PreferencesActivity" />
+    </PreferenceScreen>
+
+</PreferenceScreen>

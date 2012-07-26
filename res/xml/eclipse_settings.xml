@@ -20,5 +20,10 @@
         android:fragment="com.android.settings.cyanogenmod.TabletPowerWidget"
         android:title="@string/notification_drawer_title" />
 
+    <PreferenceScreen
+            android:key="weather_settings"
+	    android:fragment="com.android.settings.WeatherSettings"
+            android:title="@string/weather_title" />
+
 </PreferenceScreen>
 
