@@ -54,6 +54,11 @@
                 android:targetClass="com.android.settings.VoltageControlSettings" />
     </PreferenceScreen>
 
+    <com.android.settings.ColorTuningPreference
+	    android:key="color_tuning"
+	    android:title="@string/color_tuning_title_head"
+	    android:summary="@string/color_tuning_summary_head" />
+
     <com.android.settings.GammaTuningPreference
             android:key="gamma_tuning"
             android:title="@string/gamma_tuning_title"

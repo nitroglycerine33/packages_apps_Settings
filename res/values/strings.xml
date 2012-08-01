@@ -4180,12 +4180,14 @@
     <string name="current">mV current</string>
     <string name="saved">mV saved</string>
 
-    <!-- Gamma Control -->
+    <!-- Gamma and Color Control -->
     <string name="gamma_tuning_title">Color gamma tuning</string>
     <string name="gamma_tuning_summary">Calibrate gamma color correction</string>
     <string name="color_red_title">Red</string>
     <string name="color_green_title">Green</string>
     <string name="color_blue_title">Blue</string>
+    <string name="color_tuning_title_head">Color Multipliers Tuning</string>
+    <string name="color_tuning_summary_head">Calibrate multipliers screen color</string>
 
     <!-- Power Widget  -->
     <string name="power_widget_title">Power widget</string>
