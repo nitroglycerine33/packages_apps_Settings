@@ -26,6 +26,11 @@
 	android:fragment="com.android.settings.eclipse.fragments.Navbar" />
 
     <PreferenceScreen
+            android:key="lockscreen_settings"
+            android:title="@string/lockscreen_settings"
+            android:fragment="com.android.settings.LockscreenSettings" />
+
+    <PreferenceScreen
 	android:key="weather_settings"
 	android:fragment="com.android.settings.WeatherSettings"
         android:title="@string/weather_title" />

@@ -4325,6 +4325,13 @@
     <string name="navbar_widgets_reset">Reset Widgets</string>
     <string name="navigation_bar_title">Navigation bar</string>
 
+
+    <!-- Strings for Lockscreen Settings Menu -->
+    <string name="lockscreen_settings">Lockscreen Settings</string>
+    <string name="lockscreen_styles_title">Lockscreen Style</string>
+    <string name="lockscreen_styles_summary">Pick what Lockscreen Style you would like to use</string>
+    <string name="rotary_arrows_title">Hide Rotary Arrows</string>
+
     <string name="dpi">DPI</string>
     <string name="group_applications">Applications</string>
 </resources>
