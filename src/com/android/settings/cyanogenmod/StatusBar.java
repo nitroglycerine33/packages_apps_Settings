@@ -15,6 +15,7 @@
  */
 
 package com.android.settings.cyanogenmod;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -30,9 +31,6 @@ import android.util.Log;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-
-import com.android.settings.util.colorpicker.ColorPickerPreference;
-
 
 public class StatusBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 

@@ -1510,5 +1510,14 @@
             </intent-filter>
         </receiver>
 		<service android:name=".service.BootService" />
+
+        <activity android:name=".eclipse.fragments.Navbar"
+            android:label="Navigation Bar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>

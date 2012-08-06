@@ -4121,6 +4121,11 @@
     <string name="carrier_text">Custom Carrier Text</string>
     <string name="general_settings">General Settings</string>
 
+    <!-- UI debug setting: kill app long-press back [CHAR LIMIT=25] -->
+    <string name="kill_app_longpress_back">Kill App Back Button</string>
+    <!-- UI debug settting: kill app long-press back [CHAR LIMIT=50] -->
+    <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string>
+
     <!--Weather Settings -->
     <string name="weatherclock_title">Sense Clock Settings</string>
 
@@ -4272,7 +4277,54 @@
     <string name="toggleFlashlight">Flashlight</string>
     <string name="toggleLockScreen">Lock Screen</string>
     <string name="toggleWimax">WiMax</string>
+    <string name="select_custom_app_title">Select custom application</string>
+
     <!-- Status bar notification count -->
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display number of pending notifications</string>
+
+    <!-- Navigation -->
+    <string name="navbar_width_title">Navbar Width (Landscape)</string>
+    <string name="navbar_width_summary">Requires a Reboot</string>
+    <string name="navbar_height_title">Navbar Height (Portrait)</string>
+    <string name="navbar_height_sumary">Requires a Reboot</string>
+    <string name="title_pref_menu_display">Menu Location</string>
+    <string name="summary_pref_menu_display">Position of menu button</string>
+    <string name="navigation_bar">Navigation</string>
+    <string name="navigation_bar_tint_title">Softkey Color</string>
+    <string name="navigation_bar_tint_summary">Navigation bar button color</string>
+    <string name="navigation_bar_glow_tint_title">Navbar Glow Color</string>
+    <string name="navigation_bar_glow_tint_summary">Custom button press glow color</string>
+    <string name="nav_button_background_color_title">Navbar Background Color</string>
+    <string name="title_pref_navigation_menu_display">Menu Visibility</string>
+    <string name="summary_pref_navigation_menu_display">Appearance of the menus</string>
+    <string name="navbar_order_title">Button Order</string>
+    <string name="navbar_order_summary">The order of your softkeys</string>
+    <string name="enabled_navbar_buttons_title">Enabled Buttons</string>
+    <string name="enabled_navbar_buttons_summary">Choose the desired softkeys</string>
+    <string name="button_transparency_title">Button Transparency</string>
+    <string name="long_press_home_title">Longpress Home</string>
+    <string name="long_press_home_summary">Long pressing the home softkey</string>
+    <string name="glow_times_title">Button Glow</string>
+    <string name="glow_times_summary">Adjust button animation speeds</string>
+    <string name="navbar_qty_title">Navigation bar buttons</string>
+    <string name="navbar_qty_summary">Number of buttons</string>
+    <string name="navbar_action_title">Button %1$s action &amp; icon</string>
+    <string name="navbar_longpress_title">Button %1$s longpress action</string>
+    <string name="navbar_button_cat">Navigation bar buttons</string>
+    <string name="navbar_action_home">Home</string>
+    <string name="navbar_action_back">Back</string>
+    <string name="navbar_action_recents">Recents</string>
+    <string name="navbar_action_search">Search</string>
+    <string name="navbar_action_menu">Menu</string>
+    <string name="navbar_action_kill">Kill task</string>
+    <string name="navbar_action_power">Power</string>
+    <string name="navbar_action_none">Empty</string>
+    <string name="navbar_enable_bar">Enable Navbar</string>
+    <string name="navbar_widgets">Navbar Widgets</string>
+    <string name="navbar_widgets_reset">Reset Widgets</string>
+    <string name="navigation_bar_title">Navigation bar</string>
+
+    <string name="dpi">DPI</string>
+    <string name="group_applications">Applications</string>
 </resources>
