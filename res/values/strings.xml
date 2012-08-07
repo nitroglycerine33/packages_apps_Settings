@@ -4328,9 +4328,24 @@
 
     <!-- Strings for Lockscreen Settings Menu -->
     <string name="lockscreen_settings">Lockscreen Settings</string>
+    <string name="lockscreen_battery">Lockscreen Battery %</string>
+    <string name="lockscreen_extra">Enable Custom App Icons</string>
+    <string name="lockscreen_before_unlock">Lockscreen before Unlock</string>
+    <string name="custom_app_1">Custom App</string>
+    <string name="custom_app_2">Custom App 2</string>
+    <string name="custom_app_1_summary">Choose a custom app to launch</string>
+    <string name="custom_app_2_summary">Choose a custom app to launch</string>
+    <string name="quick_password_title">Quick Password Unlock</string>
+    <string name="quick_password_summary">Allows you to not hit the enter key on password lockscreens</string>
     <string name="lockscreen_styles_title">Lockscreen Style</string>
     <string name="lockscreen_styles_summary">Pick what Lockscreen Style you would like to use</string>
     <string name="rotary_arrows_title">Hide Rotary Arrows</string>
+    <string name="rotary_down_title">Rotary Pulldown Unlock</string>
+    <string name="pref_lockscreen_ring_custom_apps_dialog_title_set">Select which shortcut to set</string>
+    <string name="pref_lockscreen_ring_custom_apps_dialog_add">Add</string>
+    <string name="pref_lockscreen_ring_custom_apps_dialog_remove">Remove</string>
+    <string name="pref_lockscreen_ring_custom_apps_dialog_title_unset">Select which shortcut to un-set</string>
+    <string name="pref_lockscreen_ring_custom_apps_dialog_cancel">Cancel</string>
 
     <string name="dpi">DPI</string>
     <string name="group_applications">Applications</string>

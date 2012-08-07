@@ -1015,14 +1015,16 @@
 
     <!--arrays for choosing the lockscreen type -->
     <string-array name="lockscreen_styles_entries">
-	<item>ICS Lockscreen</item>
+	<item>Jellybean Lockscreen</item>
 	<item>Slider Lockscreen</item>
         <item>Rotary Lockscreen</item>
+        <item>Honeycomb Lockscreen</item>
     </string-array>
 
-    <string-array name="lockscreen_styles_values">
-	<item>0</item>
-	<item>1</item>
-	<item>2</item>
-    </string-array>
+	<string-array name="lockscreen_styles_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
 </resources>
