@@ -30,7 +30,6 @@ import android.net.ConnectivityManager;
 import android.net.LinkProperties;
 import android.os.BatteryManager;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.preference.Preference;
 import android.preference.PreferenceActivity.Header;
 import android.preference.PreferenceFrameLayout;

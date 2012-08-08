@@ -15,8 +15,10 @@ import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 
 import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
-public class LockscreenSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class LockscreenSettings extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
         private static final String LOCKSCREEN_STYLES = "lockscreen_styles";
         private static final String ROTARY_ARROWS = "rotary_arrows";

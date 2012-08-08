@@ -69,4 +69,7 @@
     <dimen name="navigation_bar_36">36.0dip</dimen>
     <dimen name="navigation_bar_30">30.0dip</dimen>
     <dimen name="navigation_bar_24">24.0dip</dimen>
+
+    <!-- Lockscreen hotseat Settings -->
+    <dimen name="shortcut_picker_left_padding">70dip</dimen>
 </resources>
