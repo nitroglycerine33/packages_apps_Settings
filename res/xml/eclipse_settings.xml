@@ -36,6 +36,11 @@
         android:title="@string/lockscreen_target_title" />
 
     <PreferenceScreen
+            android:key="quiet_hours"
+            android:fragment="com.android.settings.cyanogenmod.QuietHours"
+            android:title="@string/quiet_hours_title" />
+
+    <PreferenceScreen
 	android:key="weather_settings"
 	android:fragment="com.android.settings.WeatherSettings"
         android:title="@string/weather_title" />
