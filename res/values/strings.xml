@@ -4349,7 +4349,7 @@
     <string name="pref_lockscreen_ring_custom_apps_dialog_cancel">Cancel</string>
 
     <!-- Lock Screen Header -->
-    <string name="lock_screen_title">Lock screen Types</string>
+    <string name="lock_screen_title">Lockscreen Types</string>
 
     <!-- Lock Screen Shortcuts -->
     <string name="lockscreen_targets">Lockscreen Targets</string>
