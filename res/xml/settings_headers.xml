@@ -67,6 +67,13 @@
         android:fragment="com.android.settings.GeneralSettings"
         android:title="@string/general_settings" />
 
+    <!-- Input Controls -->
+    <header
+        android:id="@+id/input_settings"
+        android:icon="@drawable/ic_eclipse_input"
+        android:fragment="com.android.settings.InputSettings"
+        android:title="@string/input_settings_title" />
+
     <!-- System -->
     <header
         android:id="@+id/eclipse_settings"
