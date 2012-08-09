@@ -60,12 +60,19 @@
     <!-- ECLIPSE SETTINGS -->
     <header android:title="@string/header_category_eclipse" />
 
+    <!-- General -->
+    <header
+        android:id="@+id/general_settings"
+        android:icon="@drawable/ic_eclipse_general"
+        android:fragment="com.android.settings.GeneralSettings"
+        android:title="@string/general_settings" />
+
     <!-- System -->
     <header
         android:id="@+id/eclipse_settings"
         android:icon="@drawable/ic_settings_system"
         android:fragment="com.android.settings.EclipseSettings"
-        android:title="@string/system_settings_title" />
+        android:title="@string/system_interface_title" />
 
     <!-- Performance -->
     <header

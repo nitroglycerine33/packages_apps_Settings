@@ -4111,16 +4111,20 @@
     <string name="header_category_eclipse">ECLIPSE SETTINGS</string>
     <!-- System Interface settings  -->
     <string name="system_settings_title">System</string>
-    <string name="system_interface_title">System interface</string>
+    <string name="system_interface_title">Interface</string>
     <string name="performance_prefs_title">Performance</string>
     <string name="eclipse_launcher_title">Apex Launcher</string>
     <string name="weather_title">Weather Settings</string>
     <string name="eclipse_settings_title">Eclipse Settings</string>
     <string name="voltage_control">Voltage Control</string>
 
+    <!-- Eclipse Settings Functions -->
+    <string name="general_settings">General Settings</string>
+    <string name="systemui_settings">SystemUI Settings</string>
+    <string name="lockscreen_header_settings">Lockscreen Settings</string>
+
     <!-- General settings  -->
     <string name="carrier_text">Custom Carrier Text</string>
-    <string name="general_settings">General Settings</string>
 
     <!-- UI debug setting: kill app long-press back [CHAR LIMIT=25] -->
     <string name="kill_app_longpress_back">Kill App Back Button</string>
