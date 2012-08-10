@@ -15,7 +15,11 @@ public class InputSettings extends SettingsPreferenceFragment {
 
 
 private static final String VOLUME_WAKE_PREF = "pref_volume_wake";
+private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
+
 private CheckBoxPreference mVolumeWakePref;
+private CheckBoxPreference mVolBtnMusicCtrl;
+
 
 
     
@@ -28,6 +32,9 @@ private CheckBoxPreference mVolumeWakePref;
 	mVolumeWakePref = (CheckBoxPreference) prefs.findPreference(VOLUME_WAKE_PREF);
 	mVolumeWakePref.setChecked(Settings.System.getInt(getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
 
+	mVolBtnMusicCtrl = (CheckBoxPreference) findPreference(KEY_VOLBTN_MUSIC_CTRL);
+	mVolBtnMusicCtrl.setChecked(Settings.System.getInt(getContentResolver(), Settings.System.VOLBTN_MUSIC_CONTROLS, 0) != 0);
+
     }
 
     @Override
@@ -37,6 +44,10 @@ private CheckBoxPreference mVolumeWakePref;
 	    value = mVolumeWakePref.isChecked();
             Settings.System.putInt(getContentResolver(),
 	    Settings.System.VOLUME_WAKE_SCREEN, value ? 1 : 0);
+	} else if (preference == mVolBtnMusicCtrl) {
+	    value = mVolBtnMusicCtrl.isChecked(); 
+	    Settings.System.putInt(getContentResolver(), 
+	    Settings.System.VOLBTN_MUSIC_CONTROLS, value ? 1 : 0);
         }
 
         return true;
