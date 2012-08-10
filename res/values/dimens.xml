@@ -72,4 +72,8 @@
 
     <!-- Lockscreen hotseat Settings -->
     <dimen name="shortcut_picker_left_padding">70dip</dimen>
+
+    <!-- Top position of quick contact. If this is -1, the vertical position is determined
+    based on the source of the request -->
+    <dimen name="quick_dev_top_position">48.0dip</dimen>
 </resources>

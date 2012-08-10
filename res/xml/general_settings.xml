@@ -14,4 +14,9 @@
 	android:fragment="com.android.settings.WeatherSettings"
         android:title="@string/weather_title" />
 
+    <PreferenceScreen
+            android:key="about_settings"
+            android:title="@string/about_eclipse"
+            android:fragment="com.android.settings.About" />
+
 </PreferenceScreen>

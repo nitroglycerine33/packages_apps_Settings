@@ -87,4 +87,16 @@
         <attr name="seekbar_interval" format="integer" />
         <attr name="seekbar_default_value" format="integer" />
     </declare-styleable>
+
+    <declare-styleable name="ProportionalLayout">
+        <attr name="direction" format="string"/>
+        <attr name="ratio" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="DevCard">
+        <attr name="nameDev" format="string" />
+        <attr name="twitterName" format="string" />
+        <attr name="donateLink" format="string" />
+        <attr name="devPic" format="reference"/>
+    </declare-styleable>
 </resources>

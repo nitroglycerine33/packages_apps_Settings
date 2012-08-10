@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:eclipse="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/about_eclipse"
+    android:key="about_settings">
+
+    <PreferenceCategory
+        android:key="eclipse_links"
+        android:title="@string/eclipse_links">
+
+        <Preference
+            android:key="eclipse_site"
+            android:title="@string/eclipse_site_title"
+            android:summary="@string/eclipse_site_summary"
+        />
+
+        <Preference
+            android:key="eclipse_source"
+            android:title="@string/eclipse_source_title"
+            android:summary="@string/eclipse_source_summary"
+        />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="eclipse_primary"
+        android:title="@string/eclipse_primary">
+
+        <com.android.settings.util.devcard.DevCard
+            android:title="Nitroglycerine33"
+            eclipse:nameDev="Nitroglycerine33"
+            eclipse:twitterName="nitroglycerin33"
+            eclipse:donateLink="@string/nitro_donate"
+            eclipse:devPic="@drawable/nitro"
+        />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

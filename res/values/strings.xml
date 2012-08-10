@@ -4126,6 +4126,17 @@
     <!-- General settings  -->
     <string name="carrier_text">Custom Carrier Text</string>
 
+    <!-- About Strings-->
+    <string name="eclipse_links">Eclipse Rom Site Links</string>
+    <string name="eclipse_site_title">Home Page</string>
+    <string name="eclipse_site_summary">http://eclipserom.com</string>
+    <string name="eclipse_source_title">Nitroglycerine33 Twitter</string>
+    <string name="eclipse_source_summary">http://twitter.com/nitroglycerin33</string>
+    <string name="eclipse_team">Eclipse Members</string>
+    <string name="eclipse_primary">Eclipse Developer</string>
+    <string name="nitro_donate">http://goo.gl/lt6jC</string>
+    <string name="about_eclipse">About Eclipse Rom</string>
+
     <!-- Input Settings -->
     <string name="input_settings_title">Input controls</string>
     <string name="pref_volume_wake_title">Volume rocker wake</string>
