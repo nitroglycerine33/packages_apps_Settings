@@ -57,7 +57,7 @@
 
         <CheckBoxPreference
             android:key="battery_text"
-            android:title="Use Battery Text" >
+            android:title="Use battery text" >
         </CheckBoxPreference>
 
         <PreferenceScreen

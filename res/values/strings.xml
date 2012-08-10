@@ -4113,13 +4113,13 @@
     <string name="system_settings_title">System</string>
     <string name="system_interface_title">Interface</string>
     <string name="performance_prefs_title">Performance</string>
-    <string name="eclipse_launcher_title">Apex Launcher</string>
-    <string name="weather_title">Weather Settings</string>
+    <string name="eclipse_launcher_title">Apex launcher</string>
+    <string name="weather_title">Weather settings</string>
     <string name="eclipse_settings_title">Eclipse Settings</string>
     <string name="voltage_control">Voltage Control</string>
 
     <!-- Eclipse Settings Functions -->
-    <string name="general_settings">General Settings</string>
+    <string name="general_settings">General settings</string>
     <string name="systemui_settings">SystemUI Settings</string>
     <string name="lockscreen_header_settings">Lockscreen Settings</string>
 
@@ -4127,7 +4127,7 @@
     <string name="carrier_text">Custom Carrier Text</string>
 
     <!-- Input Settings -->
-    <string name="input_settings_title">Input Controls</string>
+    <string name="input_settings_title">Input controls</string>
     <string name="pref_volume_wake_title">Volume rocker wake</string>
     <string name="pref_volume_wake_summary">Pressing the volume up/down wakes the device</string>
 
@@ -4136,15 +4136,15 @@
     <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
 
     <!-- UI debug setting: kill app long-press back [CHAR LIMIT=25] -->
-    <string name="kill_app_longpress_back">Kill App Back Button</string>
+    <string name="kill_app_longpress_back">Kill app back button</string>
     <!-- UI debug settting: kill app long-press back [CHAR LIMIT=50] -->
     <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string>
 
     <!--Weather Settings -->
-    <string name="weatherclock_title">Sense Clock Settings</string>
+    <string name="weatherclock_title">Sense clock settings</string>
 
     <!-- Notification Drawer  -->
-    <string name="notification_drawer_title">Power Widgets/Toggles</string>
+    <string name="notification_drawer_title">Power widgets/toggles</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -4157,15 +4157,15 @@
     <string name="ics_color">ICS</string>
 
     <!-- Strings for Battery Menus -->
-    <string name="battery_types">Battery Types</string>
-    <string name="hide_battery">Hide Battery Icon</string>
-    <string name="battery_bar">Battery Bar</string>
-    <string name="battery_bar_color">Battery Bar Color</string>
-    <string name="battery_text_color">Battery Text Colors</string>
-    <string name="allow_color_changes">Allow Custom Text Colors</string>
-    <string name="battery_text_charge">Battery Charging Color</string>
-    <string name="battery_text_normal">Battery Color (Above 15%)</string>
-    <string name="battery_text_low">Battery Color (Below 15%)</string>
+    <string name="battery_types">Battery types</string>
+    <string name="hide_battery">Hide battery icon</string>
+    <string name="battery_bar">Battery bar</string>
+    <string name="battery_bar_color">Battery bar color</string>
+    <string name="battery_text_color">Battery text colors</string>
+    <string name="allow_color_changes">Allow custom text colors</string>
+    <string name="battery_text_charge">Battery charging color</string>
+    <string name="battery_text_normal">Battery color (above 15%)</string>
+    <string name="battery_text_low">Battery color (below 15%)</string>
 
     <!-- Combined Bar  -->
     <string name="combined_bar_title">Combined bar</string>
@@ -4174,9 +4174,9 @@
 
     <!-- Kernel Settings -->
     <string name="cpu_settings_title">CPU settings</string>
-    <string name="kernel_settings_title">Kernel Settings</string>
-    <string name="cpu_title">Kernel Settings</string>
-    <string name="kernel_information_title">Kernel Information</string>
+    <string name="kernel_settings_title">Kernel settings</string>
+    <string name="cpu_title">Kernel settings</string>
+    <string name="kernel_information_title">Kernel information</string>
     <string name="current_kernel_title">Current kernel info</string>
     <string name="current_cpu_speed_title">Current CPU speed</string>
     <string name="advanced_settings_voltage">Advanced settings</string>
@@ -4205,7 +4205,7 @@
     <string name="color_red_title">Red</string>
     <string name="color_green_title">Green</string>
     <string name="color_blue_title">Blue</string>
-    <string name="color_tuning_title_head">Color Multipliers Tuning</string>
+    <string name="color_tuning_title_head">Color multipliers tuning</string>
     <string name="color_tuning_summary_head">Calibrate multipliers screen color</string>
 
     <!-- Power Widget  -->
@@ -4298,26 +4298,26 @@
     <string name="status_bar_notif_count_summary">Display number of pending notifications</string>
 
     <!-- Navigation -->
-    <string name="navbar_width_title">Navbar Width (Landscape)</string>
+    <string name="navbar_width_title">Navbar width (landscape)</string>
     <string name="navbar_width_summary">Requires a Reboot</string>
-    <string name="navbar_height_title">Navbar Height (Portrait)</string>
+    <string name="navbar_height_title">Navbar height (portrait)</string>
     <string name="navbar_height_sumary">Requires a Reboot</string>
-    <string name="title_pref_menu_display">Menu Location</string>
+    <string name="title_pref_menu_display">Menu location</string>
     <string name="summary_pref_menu_display">Position of menu button</string>
     <string name="navigation_bar">Navigation</string>
-    <string name="navigation_bar_tint_title">Softkey Color</string>
+    <string name="navigation_bar_tint_title">Softkey color</string>
     <string name="navigation_bar_tint_summary">Navigation bar button color</string>
     <string name="navigation_bar_glow_tint_title">Navbar Glow Color</string>
     <string name="navigation_bar_glow_tint_summary">Custom button press glow color</string>
     <string name="nav_button_background_color_title">Navbar Background Color</string>
-    <string name="title_pref_navigation_menu_display">Menu Visibility</string>
+    <string name="title_pref_navigation_menu_display">Menu visibility</string>
     <string name="summary_pref_navigation_menu_display">Appearance of the menus</string>
     <string name="navbar_order_title">Button Order</string>
     <string name="navbar_order_summary">The order of your softkeys</string>
     <string name="enabled_navbar_buttons_title">Enabled Buttons</string>
     <string name="enabled_navbar_buttons_summary">Choose the desired softkeys</string>
-    <string name="button_transparency_title">Button Transparency</string>
-    <string name="long_press_home_title">Longpress Home</string>
+    <string name="button_transparency_title">Button transparency</string>
+    <string name="long_press_home_title">Longpress home</string>
     <string name="long_press_home_summary">Long pressing the home softkey</string>
     <string name="glow_times_title">Button Glow</string>
     <string name="glow_times_summary">Adjust button animation speeds</string>
@@ -4351,9 +4351,9 @@
     <string name="custom_app_2_summary">Choose a custom app to launch</string>
     <string name="quick_password_title">Quick Password Unlock</string>
     <string name="quick_password_summary">Allows you to not hit the enter key on password lockscreens</string>
-    <string name="lockscreen_styles_title">Lockscreen Style</string>
-    <string name="lockscreen_styles_summary">Pick what Lockscreen Style you would like to use</string>
-    <string name="rotary_arrows_title">Hide Rotary Arrows</string>
+    <string name="lockscreen_styles_title">Lockscreen style</string>
+    <string name="lockscreen_styles_summary">Pick what lockscreen style you would like to use</string>
+    <string name="rotary_arrows_title">Hide rotary arrows</string>
     <string name="rotary_down_title">Rotary Pulldown Unlock</string>
     <string name="pref_lockscreen_ring_custom_apps_dialog_title_set">Select which shortcut to set</string>
     <string name="pref_lockscreen_ring_custom_apps_dialog_add">Add</string>
@@ -4362,7 +4362,7 @@
     <string name="pref_lockscreen_ring_custom_apps_dialog_cancel">Cancel</string>
 
     <!-- Lock Screen Header -->
-    <string name="lock_screen_title">Lockscreen Types</string>
+    <string name="lock_screen_title">Lockscreen types</string>
 
     <!-- Lock Screen Shortcuts -->
     <string name="lockscreen_targets">Lockscreen Targets</string>
