@@ -4126,6 +4126,9 @@
     <!-- General settings  -->
     <string name="carrier_text">Custom Carrier Text</string>
 
+    <!-- Themes settings #CM -->
+    <string name="themes_settings_title">Themes</string>
+
     <!-- About Strings-->
     <string name="eclipse_links">Eclipse Rom Site Links</string>
     <string name="eclipse_site_title">Home Page</string>
