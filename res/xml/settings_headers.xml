@@ -88,7 +88,7 @@
         android:icon="@drawable/ic_eclipse_kernel"
         android:title="@string/kernel_settings_title" />
 
-    <!-- Launcher -->
+    <!-- Launcher comment out for now
     <header
         android:id="@+id/launcher_settings"
         android:title="@string/eclipse_launcher_title"
@@ -98,6 +98,7 @@
             android:targetPackage="com.anddoes.launcher"
             android:targetClass="com.anddoes.launcher.preference.PreferencesActivity" />
     </header>
+    -->
 
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />
