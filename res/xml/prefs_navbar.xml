@@ -62,6 +62,14 @@
                 android:key="button_transparency"
                 android:title="@string/button_transparency_title" />
 
+	    <ListPreference
+ 	 	android:entries="@array/glow_times_entries"
+ 	 	android:entryValues="@array/glow_times_values"
+ 	 	android:key="glow_times"
+ 	 	android:title="@string/glow_times_title"
+ 	 	android:defaultValue="100|10"
+ 	 	android:persistent="false" />
+
             <ListPreference
                 android:entries="@array/long_press_home_entries"
                 android:entryValues="@array/long_press_home_values"

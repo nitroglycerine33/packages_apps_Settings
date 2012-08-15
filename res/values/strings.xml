@@ -4333,8 +4333,12 @@
     <string name="button_transparency_title">Button transparency</string>
     <string name="long_press_home_title">Longpress home</string>
     <string name="long_press_home_summary">Long pressing the home softkey</string>
-    <string name="glow_times_title">Button Glow</string>
     <string name="glow_times_summary">Adjust button animation speeds</string>
+    <string name="glow_times_title">Button glow animation</string>
+    <string name="glow_times_off">Off</string>
+    <string name="glow_times_superquick">Ultra fast</string>
+    <string name="glow_times_quick">Fast</string>
+    <string name="glow_times_normal">Normal</string>
     <string name="navbar_qty_title">Navigation bar buttons</string>
     <string name="navbar_qty_summary">Number of buttons</string>
     <string name="navbar_action_title">Button %1$s action &amp; icon</string>
