@@ -1423,6 +1423,8 @@
 
 	<activity android:name=".GeneralSettings" />
 
+	<activity android:name=".GeneralUI" />
+
 	<activity android:name=".cyanogenmod.QuietHours" />
 
         <activity android:name="About"

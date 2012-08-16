@@ -7,7 +7,13 @@
 
     <PreferenceCategory
             android:key="systemui_category"
-            android:title="SystemUI Settings">
+            android:title="User Interface Settings">
+    <PreferenceScreen
+        android:key="general_ui"
+	android:icon="@drawable/ic_eclipse_general"
+        android:fragment="com.android.settings.GeneralUI"
+        android:title="@string/general_ui" />
+
     <PreferenceScreen
         android:key="status_bar"
 	android:icon="@drawable/ic_eclipse_systemui"
