@@ -4127,6 +4127,7 @@
     <string name="carrier_text">Custom Carrier Text</string>
     <string name="general_ui">General UI</string>
     <string name="enable_volume_options">Enable volume panel</string>
+    <string name="volume_options_summary">Access volume settings from volume rocker window</string>
 
     <!-- Themes settings #CM -->
     <string name="themes_settings_title">Themes</string>

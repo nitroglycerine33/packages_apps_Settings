@@ -2,14 +2,16 @@
 <PreferenceScreen
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<PreferenceCategory
-		android:key="misc"
-		android:title="Misc Settings">
+ <PreferenceCategory
+	android:key="misc"
+	android:title="Volume Settings">
 
-         <CheckBoxPreference
-			android:key="enable_volume_options"
-			android:title="@string/enable_volume_options" />
+    <CheckBoxPreference
+	android:key="enable_volume_options"
+	android:title="@string/enable_volume_options"
+	android:summary="@string/volume_options_summary">
+    </CheckBoxPreference>
 
-	</PreferenceCategory>
+ </PreferenceCategory>
 
 </PreferenceScreen>
