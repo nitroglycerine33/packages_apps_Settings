@@ -93,22 +93,11 @@ public class Navbar extends SettingsPreferenceFragment implements
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
-    private static final int REQUEST_CREATE_APPWIDGET = 5;
-    private static final int REQUEST_PICK_APPWIDGET = 9;
-    public static final int APP_WIDGET_HOST_ID = 2112;
-
-    public static final String ACTION_ALLOCATE_ID = "com.android.systemui.ACTION_ALLOCATE_ID";
-    public static final String ACTION_DEALLOCATE_ID = "com.android.systemui.ACTION_DEALLOCATE_ID";
-    public static final String ACTION_SEND_ID = "com.android.systemui.ACTION_SEND_ID";
-    public int mWidgetIdQty = 0;
 
     public static final String PREFS_NAV_BAR = "navbar";
 
-    private static int currentIconIndex;
-    private static final int DEFAULT_BACKGROUND_COLOR = 0xFF000000;
-
     // move these later
-    ColorPickerPreference mNavigationBarColor;
+	ColorPickerPreference mNavigationBarColor;
     ListPreference menuDisplayLocation;
     ListPreference mNavBarMenuDisplay;
     SeekBarPreference mButtonAlpha;
@@ -157,9 +146,8 @@ public class Navbar extends SettingsPreferenceFragment implements
                 Settings.System.NAVIGATION_BAR_BUTTONS_QTY, 3) + "");
 
         mPicker = new ShortcutPickerHelper(this, this);
-
-        mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
-        mNavigationBarColor.setOnPreferenceChangeListener(this);
+	    mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
+ 	    mNavigationBarColor.setOnPreferenceChangeListener(this);
 
 	mGlowTimes = (ListPreference) findPreference(PREF_GLOW_TIMES);
  		mGlowTimes.setOnPreferenceChangeListener(this);
@@ -430,18 +418,6 @@ public class Navbar extends SettingsPreferenceFragment implements
         }
         return -1;
     }
-
-    public static void addButton(Context context, String key) {
-        ArrayList<String> enabledToggles = getButtonsStringArray(context);
-        enabledToggles.add(key);
-        setButtonsFromStringArray(context, enabledToggles);
-    }
-
-    public static void removeButton(Context context, String key) {
-        ArrayList<String> enabledToggles = getButtonsStringArray(context);
-        enabledToggles.remove(key);
-        setButtonsFromStringArray(context, enabledToggles);
-    }
     
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
@@ -453,7 +429,7 @@ public class Navbar extends SettingsPreferenceFragment implements
             } else if ((requestCode == REQUEST_PICK_CUSTOM_ICON)
                     || (requestCode == REQUEST_PICK_LANDSCAPE_ICON)) {
 
-                String iconName = "navbar_icon_" + mPendingIconIndex + ".png";
+                String iconName = getIconFileName(mPendingIconIndex);
                 FileOutputStream iconStream = null;
                 try {
                     iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
@@ -476,10 +452,16 @@ public class Navbar extends SettingsPreferenceFragment implements
                 if (f.exists())
                     f.delete();
 
-                Toast.makeText(getActivity(), mPendingIconIndex + "'s icon set successfully!",
+                Toast.makeText(
+                        getActivity(),
+                        mPendingIconIndex
+                                + getResources().getString(
+                                        R.string.custom_app_icon_successfully),
                         Toast.LENGTH_LONG).show();
                 refreshSettings();
             }
+        } else if (resultCode == Activity.RESULT_CANCELED && data != null) {
+
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -679,10 +661,6 @@ public class Navbar extends SettingsPreferenceFragment implements
                             Uri.fromFile(mContext.getFileStreamPath(iconName)).toString());
                 }
             }
-            if (mPendingNavBarCustomAction.iconIndex != -1)
-            	Settings.System.putString(getContentResolver(),
-                        Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex], "");
-
             mPendingNavBarCustomAction.preference.setSummary(friendlyName);
         }
     }
@@ -707,173 +685,28 @@ public class Navbar extends SettingsPreferenceFragment implements
         private static final String TAG = "NavbarLayout";
 
         Context mContext;
-        private ListView mButtonList;
-        private ButtonAdapter mButtonAdapter;
 
         /** Called when the activity is first created. */
         @Override
         public void onCreate(Bundle icicle) {
             super.onCreate(icicle);
-            mContext = getActivity().getBaseContext();
-        }
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            // Inflate the layout for this fragment
-            View v = inflater.inflate(
-                    R.layout.order_power_widget_buttons_activity, container, false);
-            return v;
+            mContext = getActivity().getBaseContext();
         }
 
         public void onActivityCreated(Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
-            mButtonList = this.getListView();
-            ((TouchInterceptor) mButtonList).setDropListener(mDropListener);
-            mButtonAdapter = new ButtonAdapter(mContext);
-            setListAdapter(mButtonAdapter);
         };
 
         @Override
         public void onDestroy() {
-            ((TouchInterceptor) mButtonList).setDropListener(null);
-            setListAdapter(null);
             super.onDestroy();
         }
 
         @Override
         public void onResume() {
             super.onResume();
-            // reload our buttons and invalidate the views for redraw
-            mButtonAdapter.reloadButtons();
-            mButtonList.invalidateViews();
-        }
-
-        private TouchInterceptor.DropListener mDropListener = new TouchInterceptor.DropListener() {
-            public void drop(int from, int to) {
-                // get the current button list
-                ArrayList<String> toggles = getButtonsStringArray(mContext);
-
-                // move the button
-                if (from < toggles.size()) {
-                    String toggle = toggles.remove(from);
-
-                    if (to <= toggles.size()) {
-                        toggles.add(to, toggle);
-
-                        // save our buttons
-                        setButtonsFromStringArray(mContext, toggles);
-
-                        // tell our adapter/listview to reload
-                        mButtonAdapter.reloadButtons();
-                        mButtonList.invalidateViews();
-                    }
-                }
-            }
-        };
-
-        private class ButtonAdapter extends BaseAdapter {
-            private Context mContext;
-            private Resources mSystemUIResources = null;
-            private LayoutInflater mInflater;
-            private ArrayList<Toggle> mToggles;
-
-            public ButtonAdapter(Context c) {
-                mContext = c;
-                mInflater = LayoutInflater.from(mContext);
-
-                PackageManager pm = mContext.getPackageManager();
-                if (pm != null) {
-                    try {
-                        mSystemUIResources = pm.getResourcesForApplication("com.android.systemui");
-                    } catch (Exception e) {
-                        mSystemUIResources = null;
-                        Log.e(TAG, "Could not load SystemUI resources", e);
-                    }
-                }
-
-                reloadButtons();
-            }
-
-            public void reloadButtons() {
-                ArrayList<String> toggles = getButtonsStringArray(mContext);
-
-                mToggles = new ArrayList<Toggle>();
-                for (String toggle : toggles) {
-                    mToggles.add(new Toggle(toggle, 0));
-                }
-            }
-
-            public int getCount() {
-                return mToggles.size();
-            }
-
-            public Object getItem(int position) {
-                return mToggles.get(position);
-            }
-
-            public long getItemId(int position) {
-                return position;
-            }
-
-            public View getView(int position, View convertView, ViewGroup parent) {
-                final View v;
-                if (convertView == null) {
-                    v = mInflater.inflate(R.layout.order_power_widget_button_list_item, null);
-                } else {
-                    v = convertView;
-                }
-
-                Toggle toggle = mToggles.get(position);
-                final TextView name = (TextView) v.findViewById(R.id.name);
-                name.setText(toggle.getId());
-                return v;
-            }
-        }
-
-        public class Toggle {
-            private String mId;
-            private int mTitleResId;
-
-            public Toggle(String id, int titleResId) {
-                mId = id;
-                mTitleResId = titleResId;
-            }
-
-            public String getId() {
-                return mId;
-            }
-
-            public int getTitleResId() {
-                return mTitleResId;
-            }
         }
     }
 
-    public static void setButtonsFromStringArray(Context c, ArrayList<String> newGoodies) {
-        String newToggles = "";
-
-        for (String s : newGoodies)
-            newToggles += s + "|";
-
-        newToggles = newToggles.substring(0, newToggles.length() - 1);
-        Settings.System.putString(c.getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTONS,
-                newToggles);
-    }
-
-    public static ArrayList<String> getButtonsStringArray(Context c) {
-        String navBarButtons = Settings.System.getString(c.getContentResolver(),
-                Settings.System.NAVIGATION_BAR_BUTTONS);
-
-        if (navBarButtons == null) {
-            navBarButtons = "BACK|HOME|TASKS";
-        }
-
-        String[] togglesStringArray = navBarButtons.split("\\|");
-        ArrayList<String> navBarButtonList = new ArrayList<String>();
-        for (String s : togglesStringArray) {
-            navBarButtonList.add(s);
-        }
-        return navBarButtonList;
-    }
 }

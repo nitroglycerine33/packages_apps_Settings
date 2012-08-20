@@ -4128,6 +4128,7 @@
     <string name="general_ui">General UI</string>
     <string name="enable_volume_options">Enable volume panel</string>
     <string name="volume_options_summary">Access volume settings from volume rocker window</string>
+    <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
 
     <!-- Themes settings #CM -->
     <string name="themes_settings_title">Themes</string>
