@@ -88,6 +88,13 @@
         android:icon="@drawable/ic_eclipse_kernel"
         android:title="@string/kernel_settings_title" />
 
+    <!-- Profiles -->
+    <header
+        android:id="@+id/profiles_settings"
+        android:icon="@drawable/ic_settings_profiles"
+        android:fragment="com.android.settings.profiles.ProfilesSettings"
+        android:title="@string/profiles_settings_title" />
+
     <!-- Launcher comment out for now
     <header
         android:id="@+id/launcher_settings"
