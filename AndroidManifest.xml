@@ -1427,6 +1427,9 @@
 
 	<activity android:name=".cyanogenmod.QuietHours" />
 
+	<!-- Light Levels activity --> 
+	<activity android:name=".cyanogenmod.LightLevelsActivity" />
+
         <activity android:name="About"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="orientation|keyboardHidden|screenSize"
