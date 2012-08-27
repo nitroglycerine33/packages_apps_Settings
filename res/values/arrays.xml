@@ -1033,6 +1033,22 @@
         <item>24</item>
     </string-array>
 
+    <string-array name="navigation_bar_height_landscape_entries">
+        <item>48 dp (default)</item>
+        <item>42 dp</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+    </string-array>
+    
+    <string-array name="navigation_bar_height_landscape" translatable="false">
+        <item>48</item>
+        <item>42</item>
+        <item>36</item>
+        <item>30</item>
+        <item>24</item>
+    </string-array>
+
     <string-array name="navigation_bar_qty_entries">
         <item>1</item>
         <item>2</item>

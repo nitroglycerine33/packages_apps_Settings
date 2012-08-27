@@ -90,6 +90,9 @@ public class Navbar extends SettingsPreferenceFragment implements
     private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
     private static final String PREF_NAV_COLOR = "nav_button_color";
     private static final String PREF_GLOW_TIMES = "glow_times";
+    private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
+    private static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
+    private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
     private static final String PREF_MENU_UNLOCK = "pref_menu_display";
     private static final String PREF_NAVBAR_QTY = "navbar_qty";
 
@@ -108,6 +111,7 @@ public class Navbar extends SettingsPreferenceFragment implements
     CheckBoxPreference mEnableNavigationBar;
     ListPreference mGlowTimes;
     ListPreference mNavigationBarHeight;
+    ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
     CheckBoxPreference mLongPressToKill;
     Preference mPendingPreference;
@@ -174,6 +178,9 @@ public class Navbar extends SettingsPreferenceFragment implements
 
         mNavigationBarHeight = (ListPreference) findPreference("navigation_bar_height");
         mNavigationBarHeight.setOnPreferenceChangeListener(this);
+
+        mNavigationBarHeightLandscape = (ListPreference) findPreference("navigation_bar_height_landscape");
+        mNavigationBarHeightLandscape.setOnPreferenceChangeListener(this);
 
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
@@ -296,6 +303,13 @@ public class Navbar extends SettingsPreferenceFragment implements
                     Settings.System.NAVIGATION_BAR_WIDTH, width);
             toggleBar();
             return true;
+        } else if (preference == mNavigationBarHeightLandscape) {
+            String newVal = (String) newValue;
+            int dp = Integer.parseInt(newVal);
+            int height = mapChosenDpToPixels(dp);
+            Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT_LANDSCAPE,
+                    height);
+			toggleBar();
         } else if (preference == mNavigationBarHeight) {
             String newVal = (String) newValue;
             int dp = Integer.parseInt(newVal);
