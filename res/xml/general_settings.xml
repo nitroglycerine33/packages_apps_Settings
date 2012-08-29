@@ -21,12 +21,6 @@
             android:title="@string/quiet_hours_title" />
 
     <PreferenceScreen
-	    android:key="weather_settings"
-	    android:icon="@drawable/ic_eclipse_weather"
-	    android:fragment="com.android.settings.WeatherSettings"
-            android:title="@string/weather_title" />
-
-    <PreferenceScreen
             android:key="about_settings"
 	    android:icon="@drawable/ic_settings_about"
             android:title="@string/about_eclipse"
