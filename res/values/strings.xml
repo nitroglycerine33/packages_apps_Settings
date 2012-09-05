@@ -4556,7 +4556,6 @@
 
     <!-- Lock screen shortcuts -->
     <string name="picker_activities">Activities</string>
-    <string name="select_custom_app_title">Select custom application</string>
     <string name="select_custom_activity_title">Select custom activity</string>
     <string name="icon_picker_choose_icon_title">Choose icon</string>
     <string name="icon_picker_alarm">Alarm</string>
@@ -4588,6 +4587,11 @@
     <string name="icon_picker_system_icons_title">System icons</string>
     <string name="icon_picker_gallery_title">Gallery</string>
     <string name="icon_picker_pack_title">Icon pack</string>
+
+    <!-- Custom Carrier -->
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
 
     <!-- Profiles - Quiet hours -->
     <string name="quiet_hours_title">Quiet hours</string>

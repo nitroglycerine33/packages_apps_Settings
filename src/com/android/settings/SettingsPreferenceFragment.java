@@ -20,6 +20,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -47,9 +48,13 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
 
     private String mHelpUrl;
 
+    protected Context mContext;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+
+	mContext = getActivity().getApplicationContext();
 
         // Prepare help url and enable menu if necessary
         int helpResource = getHelpResource();
@@ -289,5 +294,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
             return false;
         }
     }
-
+    public void setTitle(int resId) {
+        getActivity().setTitle(resId);
+    }
 }
