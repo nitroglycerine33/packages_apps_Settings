@@ -17,6 +17,12 @@
  <PreferenceCategory
 	android:key="general"
 	android:title="General Settings">
+
+	<CheckBoxPreference
+	    android:key="ime_switcher"
+	    android:title="Show IME Switcher"
+	    android:summary="In statusbar, while typing" />
+
         <Preference
             android:key="custom_carrier_label"
             android:title="@string/custom_carrier_label_title" />
