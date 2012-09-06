@@ -4130,6 +4130,14 @@
     <string name="volume_options_summary">Access volume settings from volume rocker window</string>
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
 
+    <!-- LED Controls -->
+    <string name="led_settings">LED Settings</string>
+    <string name="title_led_on">LED pulse ON duration</string>
+    <string name="summary_led_on">@null</string>
+    <string name="title_led_off">LED pulse OFF duration</string>
+    <string name="summary_led_off">@null</string>
+    <string name="led_color_title">LED color</string>
+
     <!-- Backlight  -->
     <string name="backlight_title">Automatic backlight</string>
     <string name="backlight_summary">Tweak levels and filtering</string>
@@ -4514,8 +4522,6 @@
     <string name="navigation_bar_title">Navigation bar</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>
     <string name="navigation_bar_height_summary">Navigation Bar height while in portrait.</string>
-
-
 
     <!-- Strings for Lockscreen Settings Menu -->
     <string name="lockscreen_settings">Lockscreen Settings</string>
