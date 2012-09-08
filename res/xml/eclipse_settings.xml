@@ -9,24 +9,28 @@
         android:key="general_ui"
 	android:icon="@drawable/ic_eclipse_general"
         android:fragment="com.android.settings.GeneralUI"
+	android:summary="@string/general_ui_summary"
         android:title="@string/general_ui" />
 
     <PreferenceScreen
         android:key="status_bar"
 	android:icon="@drawable/ic_eclipse_systemui"
         android:fragment="com.android.settings.cyanogenmod.StatusBar"
+	android:summary="@string/status_bar_summary"
         android:title="@string/combined_status_bar_title" />
 
     <PreferenceScreen
         android:key="notification_drawer"
 	android:icon="@drawable/ic_eclipse_widget"
         android:fragment="com.android.settings.cyanogenmod.PowerWidget"
+	android:summary="@string/power_widgets_summary"
         android:title="@string/notification_drawer_title" />
 	
     <PreferenceScreen
 	android:key="@+id/navbar"
 	android:icon="@drawable/ic_eclipse_navbar"
 	android:title="@string/navigation_bar_title"
+	android:summary="@string/navigation_bar_summary"
 	android:fragment="com.android.settings.eclipse.fragments.Navbar" />
 
 </PreferenceScreen>

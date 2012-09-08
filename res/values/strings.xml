@@ -4116,12 +4116,22 @@
     <string name="eclipse_launcher_title">Apex launcher</string>
     <string name="weather_title">Weather settings</string>
     <string name="eclipse_settings_title">Eclipse Settings</string>
-    <string name="voltage_control">Voltage Control</string>
+    <string name="voltage_control">Voltage control</string>
 
     <!-- Eclipse Settings Functions -->
     <string name="general_settings">General settings</string>
-    <string name="systemui_settings">SystemUI Settings</string>
-    <string name="lockscreen_header_settings">Lockscreen Settings</string>
+    <string name="systemui_settings">SystemUI settings</string>
+    <string name="lockscreen_header_settings">Lockscreen settings</string>
+    <string name="lockscreen_types_summary">Choose between different lockscreen styles</string>
+    <string name="navigation_bar_summary">Add/remove softkeys, change color, glow speed</string>
+    <string name="general_ui_summary">Misc settings, volume panel, carrier label</string>
+    <string name="power_widgets_summary">Pull down toggle selection, order, behavior</string>
+    <string name="status_bar_summary">Customize battery type, clock, signal text</string>
+    <string name="themes_summary">Choose between different UI themes/colors</string>
+    <string name="led_settings_summary">Customize LED color and pulse speed</string>
+    <string name="profiles_summary">Setup profiles for your type of use</string>
+    <string name="quiethours_summary">Option to quiet notification settings during certain times</string>
+    <string name="about_summary">Website, Twitter, and donate</string>
 
     <!-- General settings  -->
     <string name="carrier_text">Custom Carrier Text</string>
@@ -4306,6 +4316,7 @@
     <string name="title_toggle_lte">Toggle LTE</string>
     <string name="title_toggle_wimax">Toggle WiMax</string>
     <string name="title_button_modes">Button modes</string>
+    <string name="brightness_location_title">Brightness location</string>
     <string name="pref_brightness_mode_title">Brightness modes</string>
     <string name="pref_brightness_mode_summary">View or change the Brightness button modes</string>
     <string name="cm_brightness_mode_auto">Auto</string>

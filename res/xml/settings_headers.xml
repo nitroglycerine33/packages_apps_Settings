@@ -85,7 +85,7 @@
     <header
         android:id="@+id/lock_screen_settings"
         android:fragment="com.android.settings.cyanogenmod.LockscreenInterface"
-        android:title="@string/lock_screen_title"
+        android:title="@string/lockscreen_header_settings"
         android:icon="@drawable/ic_eclipse_lockscreen" />
 
     <!-- Performance -->
