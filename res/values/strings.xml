@@ -4352,6 +4352,12 @@
     <string name="status_bar_signal_text_show_text">Text</string>
     <string name="status_bar_signal_text_hidden">Hidden</string>
 
+    <!--Lock screen clock alignment -->
+    <string name="lockscreen_clock_align_title">Clock alignment</string>
+    <string name="lockscreen_clock_align_left">Left</string>
+    <string name="lockscreen_clock_align_center">Center</string>
+    <string name="lockscreen_clock_align_right">Right</string>
+
     <!-- Lock Screen Weather -->
     <string name="lockscreen_weather_title">Weather</string>
     <string name="lockscreen_weather_summary">Display weather information on the lock screen</string>

@@ -1352,6 +1352,18 @@
 	<item>10000</item>
     </string-array>
 
+    <string-array name="lockscreen_clock_align_entries">
+        <item>@string/lockscreen_clock_align_left</item>
+        <item>@string/lockscreen_clock_align_center</item>
+        <item>@string/lockscreen_clock_align_right</item>
+    </string-array>
+
+    <string-array name="lockscreen_clock_align_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <string-array name="weather_interval_entries" translatable="false">
         <item>@string/weather_refresh_manual</item>
         <item>@string/weather_refresh_30min</item>

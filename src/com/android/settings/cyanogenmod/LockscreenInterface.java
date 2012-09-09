@@ -43,14 +43,17 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-public class LockscreenInterface extends SettingsPreferenceFragment {
+public class LockscreenInterface extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
     private static final String TAG = "LockscreenInterface";
     public static final String KEY_WEATHER_PREF = "lockscreen_weather";
     public static final String KEY_CALENDAR_PREF = "lockscreen_calendar";
+    private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
 
     private Preference mWeatherPref;
     private Preference mCalendarPref;
     private Activity mActivity;
+    private ListPreference mClockAlign;
     ContentResolver mResolver;
 
     private boolean mIsScreenLarge;
@@ -64,6 +67,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.lockscreen_interface_settings);
         mWeatherPref = (Preference) findPreference(KEY_WEATHER_PREF);
         mCalendarPref = (Preference) findPreference(KEY_CALENDAR_PREF);
+        mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
+        mClockAlign.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -102,11 +107,28 @@ public class LockscreenInterface extends SettingsPreferenceFragment {
             }
         }
 
+        // Set the clock align value
+        if (mClockAlign != null) {
+            int clockAlign = Settings.System.getInt(mResolver,
+                    Settings.System.LOCKSCREEN_CLOCK_ALIGN, 2);
+            mClockAlign.setValue(String.valueOf(clockAlign));
+            mClockAlign.setSummary(mClockAlign.getEntries()[clockAlign]);
+        }
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        if  (preference == mClockAlign) {
+            int value = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CLOCK_ALIGN, value);
+            mClockAlign.setSummary(mClockAlign.getEntries()[value]);
+        }
+        return false;
     }
 
 }
