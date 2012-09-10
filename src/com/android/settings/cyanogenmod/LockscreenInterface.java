@@ -48,12 +48,14 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String TAG = "LockscreenInterface";
     public static final String KEY_WEATHER_PREF = "lockscreen_weather";
     public static final String KEY_CALENDAR_PREF = "lockscreen_calendar";
+    private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
 
     private Preference mWeatherPref;
     private Preference mCalendarPref;
-    private Activity mActivity;
+    private ListPreference mBatteryStatus;
     private ListPreference mClockAlign;
+    private Activity mActivity;
     ContentResolver mResolver;
 
     private boolean mIsScreenLarge;
@@ -67,6 +69,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.lockscreen_interface_settings);
         mWeatherPref = (Preference) findPreference(KEY_WEATHER_PREF);
         mCalendarPref = (Preference) findPreference(KEY_CALENDAR_PREF);
+        mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
+        mBatteryStatus.setOnPreferenceChangeListener(this);
         mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
         mClockAlign.setOnPreferenceChangeListener(this);
     }
@@ -107,6 +111,18 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             }
         }
 
+        // Set the battery status description text
+        if (mBatteryStatus != null) {
+            boolean batteryStatusAlwaysOn = Settings.System.getInt(mResolver,
+                    Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, 0) == 1;
+            if (batteryStatusAlwaysOn) {
+                mBatteryStatus.setValueIndex(1);
+            } else {
+                mBatteryStatus.setValueIndex(0);
+            }
+            mBatteryStatus.setSummary(mBatteryStatus.getEntry());
+        }
+
         // Set the clock align value
         if (mClockAlign != null) {
             int clockAlign = Settings.System.getInt(mResolver,
@@ -122,7 +138,14 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if  (preference == mClockAlign) {
+        if (preference == mBatteryStatus) {
+            int value = Integer.valueOf((String) objValue);
+            int index = mBatteryStatus.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, value);
+            mBatteryStatus.setSummary(mBatteryStatus.getEntries()[index]);
+            return true;
+        } else if (preference == mClockAlign) {
             int value = Integer.valueOf((String) objValue);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_CLOCK_ALIGN, value);
