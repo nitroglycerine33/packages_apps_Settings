@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/general_settings">
+
+    <PreferenceScreen
+        android:key="themes_settings"
+        android:icon="@drawable/ic_settings_themes"
+	android:summary="@string/themes_summary"
+        android:title="@string/themes_settings_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.tmobile.themechooser"
+            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+            android:key="about_settings"
+	    android:icon="@drawable/ic_settings_about"
+	    android:summary="@string/about_summary"
+            android:title="@string/about_eclipse"
+            android:fragment="com.android.settings.About" />
+
+</PreferenceScreen>

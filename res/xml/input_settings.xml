@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/general_settings">
+
+    <PreferenceCategory
+	android:key="input_settings"
+	android:title="Volume Rocker Controls">
+        <CheckBoxPreference
+        android:key="pref_volume_wake"
+        android:title="@string/pref_volume_wake_title"
+        android:summary="@string/pref_volume_wake_summary"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+	android:key="volbtn_music_controls"
+	android:title="@string/volbtn_music_controls_title"
+	android:summary="@string/volbtn_music_controls_summary"
+	android:persistent="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+	android:key="input_settings"
+	android:title="Misc Controls">
+        <CheckBoxPreference
+            android:key="kill_app_longpress_back"
+            android:title="@string/kill_app_longpress_back"
+            android:summary="@string/kill_app_longpress_back_summary"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
