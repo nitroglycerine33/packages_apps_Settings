@@ -57,7 +57,7 @@
     <PreferenceScreen
         android:key="navigation_bar"
 	android:icon="@drawable/ic_eclipse_navbar"
-        android:fragment="com.android.settings.cyanogenmod.NavBar"
+        android:fragment="com.android.settings.eclipse.fragments.Navbar"
 	android:summary="@string/navigation_bar_summary"
         android:title="@string/navigation_bar_title" />
 
