@@ -75,9 +75,6 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         try {
             if (!windowManager.hasNavigationBar()) {
                 Preference naviBar = findPreference(KEY_NAVIGATION_BAR);
-                if (naviBar != null) {
-                    getPreferenceScreen().removePreference(naviBar);
-                }
             } else {
                 Preference hardKeys = findPreference(KEY_HARDWARE_KEYS);
                 if (hardKeys != null) {

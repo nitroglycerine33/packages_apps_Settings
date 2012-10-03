@@ -4321,7 +4321,8 @@
 
     <!-- Summary's -->
     <string name="lockscreen_types_summary">Choose between different lockscreen styles</string>
-    <string name="navigation_bar_summary">Add/remove softkeys, change order, etc..</string>
+    <string name="navigation_bar_summary">Add/remove softkeys, change order</string>
+    <string name="navbar_advanced_summary">Softkey color, glow color, speed, etc..</string>
     <string name="wallpaper_summary">Select homescreen wallpaper</string>
     <string name="hardware_keys_summary">Customize hardware keys, long press actions</string>
     <string name="general_ui_summary">Misc settings, carrier label</string>
@@ -4359,6 +4360,9 @@
 
     <!-- Navigation Bar  -->
     <string name="navigation_bar_title">Navigation bar</string>
+    <string name="navbar_buttons_title">Navigation bar buttons</string>
+    <string name="navbar_advanced_title">Navigation bar customizer</string>
+    <string name="color_settings">Color Settings</string>
 
     <string name="navigation_bar_help_text">1 - To begin editing, tap the lock icon\n\n2 - Tap any button to assign or change functionality\n\n3 - Long press any button to rearrange the order\n\n4 - To save, tap the lock icon again\n\n5 - To restore system default, tap the reset button\n\n</string>
     <string name="navigation_bar_tips">&#8226; Actions can only be assigned to one button at a time\n\n&#8226; The home button cannot be re-assigned\n\n&#8226; Side buttons cannot be rearranged</string>
@@ -4921,6 +4925,17 @@
     <string name="volume_key_cursor_control_off">Disabled</string>
     <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
+
+    <!-- Advanced Navbar settings -->
+    <string name="button_transparency_title">Nav button transparency</string>
+    <string name="navigation_bar_tint_title">Navigation bar color</string>
+    <string name="navigation_bar_glow_tint_title">Navigation bar glow color</string>
+    <string name="navigation_bar_glow_tint_summary">When you press on a button, there is a glow. Use this to change the color of the glow.</string>
+    <string name="glow_times_title">Button glow animation</string>
+    <string name="glow_times_off">Off</string>
+    <string name="glow_times_superquick">Super quick</string>
+    <string name="glow_times_quick">Quick</string>
+    <string name="glow_times_normal">Normal</string>
 
     <!-- **** ECLIPSE ADDITIONS END **** -->
 </resources>
