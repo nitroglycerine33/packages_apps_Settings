@@ -4705,6 +4705,17 @@
     <string name="slide_lock_delay_10m">10 minutes</string>
     <string name="slide_lock_delay_30m">30 minutes</string>
 
+    <!-- Performance Voltage Settings -->
+    <string name="voltage_control">Voltage control</string>
+    <string name="advanced_settings_voltage">Advanced settings</string>
+    <string name="voltage_settings">Voltage settings</string>
+    <string name="voltage_settings_summary">Fine tune kernel voltage settings</string>
+    <string name="error_values">Error getting values</string>
+    <string name="apply_values">Apply values</string>
+    <string name="freq">Frequency</string>
+    <string name="current">mV current</string>
+    <string name="saved">mV saved</string>
+
     <!-- Performance settings  -->
     <string name="performance_settings_title">Performance</string>
 

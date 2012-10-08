@@ -1414,6 +1414,12 @@
 	    android:label="@string/battery_text_color"
 	    android:screenOrientation="portrait" />
 
+        <activity android:name="com.android.settings.VoltageControlSettings"
+            android:label="@string/voltage_settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 
         <activity android:name="About"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
