@@ -85,11 +85,19 @@ public class Navbar extends SettingsPreferenceFragment implements
     private static final String PREF_NAV_COLOR = "nav_button_color";
     private static final String PREF_NAV_GLOW_COLOR = "nav_button_glow_color";
     private static final String PREF_GLOW_TIMES = "glow_times";
+    private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
+    private static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
+    private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
+
+    private static final int DIALOG_NAVBAR_HEIGHT_REBOOT = 204;
 
     ColorPickerPreference mNavigationBarColor;
     ColorPickerPreference mNavigationBarGlowColor;
     SeekBarPreference mButtonAlpha;
     ListPreference mGlowTimes;
+    ListPreference mNavigationBarHeight;
+    ListPreference mNavigationBarHeightLandscape;
+    ListPreference mNavigationBarWidth;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -106,6 +114,7 @@ public class Navbar extends SettingsPreferenceFragment implements
 
     mGlowTimes = (ListPreference) findPreference(PREF_GLOW_TIMES);
     mGlowTimes.setOnPreferenceChangeListener(this);
+    updateGlowTimesSummary();
 
     float defaultAlpha = Settings.System.getFloat(getActivity()
             .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, 0.6f);
@@ -113,7 +122,15 @@ public class Navbar extends SettingsPreferenceFragment implements
     mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
     mButtonAlpha.setOnPreferenceChangeListener(this);
 
-    updateGlowTimesSummary();
+    mNavigationBarHeight = (ListPreference) findPreference("navigation_bar_height");
+    mNavigationBarHeight.setOnPreferenceChangeListener(this);
+
+    mNavigationBarHeightLandscape = (ListPreference) findPreference("navigation_bar_height_landscape");
+    mNavigationBarHeightLandscape.setOnPreferenceChangeListener(this);
+
+    mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
+    mNavigationBarWidth.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -152,8 +169,84 @@ public class Navbar extends SettingsPreferenceFragment implements
             Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, val / 100);
             return true;
+        } else if (preference == mNavigationBarWidth) {
+            String newVal = (String) newValue;
+            int dp = Integer.parseInt(newVal);
+            int width = mapChosenDpToPixels(dp);
+            Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH,
+                    width);
+            showDialog(DIALOG_NAVBAR_HEIGHT_REBOOT);
+            return true;
+        } else if (preference == mNavigationBarHeight) {
+            String newVal = (String) newValue;
+            int dp = Integer.parseInt(newVal);
+            int height = mapChosenDpToPixels(dp);
+            Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT,
+                    height);
+            showDialog(DIALOG_NAVBAR_HEIGHT_REBOOT);
+            return true;
+        } else if (preference == mNavigationBarHeightLandscape) {
+            String newVal = (String) newValue;
+            int dp = Integer.parseInt(newVal);
+            int height = mapChosenDpToPixels(dp);
+            Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT_LANDSCAPE,
+                    height);
+            showDialog(DIALOG_NAVBAR_HEIGHT_REBOOT);
+            return true;
         }
         return false;
+    }
+
+    @Override
+    public Dialog onCreateDialog(int dialogId) {
+        LayoutInflater factory = LayoutInflater.from(mContext);
+
+        switch (dialogId) {
+            case DIALOG_NAVBAR_HEIGHT_REBOOT:
+                return new AlertDialog.Builder(getActivity())
+                        .setTitle(getResources().getString(R.string.navbar_height_dialog_title))
+                        .setMessage(
+                                getResources().getString(R.string.navbar_height_dialog_summary))
+                        .setCancelable(false)
+                        .setNeutralButton(getResources().getString(R.string.navbar_height_dialog_button_later), new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .setPositiveButton(getResources().getString(R.string.navbar_height_dialog_button_reboot), new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                PowerManager pm = (PowerManager) getActivity()
+                                        .getSystemService(Context.POWER_SERVICE);
+                                pm.reboot("Rebooting with new bar height");
+                            }
+                        })
+                        .create();
+        }
+        return null;
+    }
+
+    public int mapChosenDpToPixels(int dp) {
+        switch (dp) {
+            case 48:
+                return getResources().getDimensionPixelSize(R.dimen.navigation_bar_48);
+            case 44:
+                return getResources().getDimensionPixelSize(R.dimen.navigation_bar_44);
+            case 42:
+                return getResources().getDimensionPixelSize(R.dimen.navigation_bar_42);
+            case 40:
+                return getResources().getDimensionPixelSize(R.dimen.navigation_bar_40);
+            case 36:
+                return getResources().getDimensionPixelSize(R.dimen.navigation_bar_36);
+            case 30:
+                return getResources().getDimensionPixelSize(R.dimen.navigation_bar_30);
+            case 24:
+                return getResources().getDimensionPixelSize(R.dimen.navigation_bar_24);
+        }
+        return -1;
     }
 
     private void updateGlowTimesSummary() {
