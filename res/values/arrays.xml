@@ -755,7 +755,7 @@
         <item>1</item>
     </string-array>
 
-    <!-- **** CYANOGENMOD EDITS START **** -->
+    <!-- **** ECLIPSE EDITS START **** -->
 
     <!-- Volume Overlay options. -->
     <string-array name="volume_overlay_entries">
@@ -1484,14 +1484,12 @@
 	<item>Don\'t show</item>
 	<item>Small AM/PM</item>
 	<item>Regular AM/PM</item>
-	<item>ProTekk O\'Clock</item>
     </string-array>
 
     <string-array name="clock_ampm_values" translatable="false">
 	<item>2</item>
 	<item>1</item>
 	<item>0</item>
-	<item>3</item>
     </string-array>
 
     <string-array name="clock_weekday_entries">
@@ -1554,5 +1552,5 @@
          <item>24</item>
      </string-array>
 
-    <!-- **** CYANOGENMOD EDITS END **** -->
+    <!-- **** ECLIPSE EDITS END **** -->
 </resources>
