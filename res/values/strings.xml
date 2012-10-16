@@ -662,7 +662,7 @@
     <!-- Hint text shown in owner info edit text [CHAR LIMIT=50] -->
     <string name="owner_info_settings_edit_text_hint">Type text to display on the lock screen</string>
     <!-- Main Settings screen setting option title for the item to take you to the location screen -->
-    <string name="location_settings_title">Location services</string>
+    <string name="location_settings_title">Location access</string>
     <!-- Main Settings screen setting option title for the item to take you to the security screen -->
     <string name="security_settings_title">Security</string>
     <!-- Main Settings screen setting option summary text for the item tot ake you to the security and location screen -->
@@ -1592,8 +1592,6 @@
     <string name="media_volume_summary">Set volume for music and videos</string>
     <!-- Sound settings screen, alarm volume slider title -->
     <string name="alarm_volume_title">Alarm</string>
-    <!-- Sound settings screen, dock settings summary-->
-    <string name="dock_settings_summary">Audio settings for the attached dock</string>
     <!-- Sound settings screen, setting check box label -->
     <string name="dtmf_tone_enable_title">Dial pad touch tones</string>
     <!-- Sound settings screen, setting check box label -->
@@ -1628,18 +1626,20 @@
     <string name="dock_settings">Dock</string>
     <!-- Dock settings title -->
     <string name="dock_settings_title">Dock settings</string>
+    <!-- Sound settings screen, dock settings summary-->
+    <string name="dock_settings_summary">Bluetooth audio settings for the attached dock</string>
     <!-- Dock audio settings -->
-    <string name="dock_audio_settings_title">Audio</string>
+    <string name="dock_audio_settings_title">Dock Bluetooth audio</string>
     <!-- Dock audio summary for docked to desk dock -->
-    <string name="dock_audio_summary_desk">Settings for the attached desktop dock</string>
+    <string name="dock_audio_summary_desk">Bluetooth audio settings for the attached desktop dock</string>
     <!-- Dock audio summary for docked to car dock -->
-    <string name="dock_audio_summary_car">Settings for the attached car dock</string>
+    <string name="dock_audio_summary_car">Bluetooth audio settings for the attached car dock</string>
     <!-- Dock audio summary for undocked -->
     <string name="dock_audio_summary_none" product="tablet">Tablet not docked</string>
     <!-- Dock audio summary for undocked -->
     <string name="dock_audio_summary_none" product="default">Phone not docked</string>
     <!-- Dock audio summary for docked to unknown -->
-    <string name="dock_audio_summary_unknown">Settings for the attached dock</string>
+    <string name="dock_audio_summary_unknown">Bluetooth audio settings for the attached dock</string>
     <!-- Dock not found dialog title -->
     <string name="dock_not_found_title">Dock not found</string>
     <!-- Dock not found dialog text -->
@@ -1656,6 +1656,11 @@
     <string name="dock_sounds_enable_summary_off" product="tablet">Don\'t play sound when inserting or removing tablet from dock</string>
     <!-- Sound settings screen, setting option summary text when check box is clear -->
     <string name="dock_sounds_enable_summary_off" product="default">Don\'t play sound when inserting or removing phone from dock</string>
+    <string name="dock_force_undock_title">Force undock</string>
+    <string name="dock_force_undock_summary_no_dock" product="tablet">Tablet is not docked</string>
+    <string name="dock_force_undock_summary_no_dock" product="default">Phone is not docked</string>
+    <string name="dock_force_undock_summary" product="tablet">Undock the Tablet</string>
+    <string name="dock_force_undock_summary" product="default">Undock the Phone</string>
 
     <!-- Account settings header. [CHAR LIMIT=30] -->
     <string name="account_settings">Accounts</string>
@@ -2170,15 +2175,17 @@
     <!-- Security & location settings screen, section header for settings relating to location -->
     <string name="location_title">My Location</string>
     <!-- [CHAR LIMIT=30] Security & location settings screen, setting check box label for Google location service (cell ID, wifi, etc.) -->
-    <string name="location_network_based">Google\'s location service</string>
+    <string name="location_network_based">Wi-Fi &amp; mobile network location</string>
     <!-- [CHAR LIMIT=130] Security & location settings screen, setting summary for Google location service check box-->
-    <string name="location_neighborhood_level">Allow anonymous location data to be sent to Google. Also allow permitted apps to use data from sources such as Wi-Fi and mobile networks to determine your approximate location.</string>
+    <string name="location_neighborhood_level">Let apps use Google\'s location service to estimate your location faster. Anonymous location data will be collected and sent to Google.</string>
     <!-- [CHAR LIMIT=130] Security & location settings screen, setting summary when Use wireless networks check box is selected, for wifi-only devices -->
     <string name="location_neighborhood_level_wifi">Location determined by Wi-Fi</string>
     <!-- [CHAR LIMIT=30] Security & location settings screen, setting check box label for GPS satellites -->
     <string name="location_gps">GPS satellites</string>
-    <!-- [CHAR LIMIT=100] Security & location settings screen, setting check box summary for GPS satellites -->
-    <string name="location_street_level">Let apps use GPS to pinpoint your location</string>
+    <!-- [CHAR LIMIT=100] Security & location settings screen, setting check box summary for GPS satellites on a tablet -->
+    <string name="location_street_level" product="tablet">Let apps use GPS on your tablet to pinpoint your location</string>
+    <!-- [CHAR LIMIT=100] Security & location settings screen, setting check box summary for GPS satellites on a phone -->
+    <string name="location_street_level" product="default">Let apps use GPS on your phone to pinpoint your location</string>
     <!-- Security & location settings screen, setting check box label if Assisted GPS should be enabled -->
     <string name="assisted_gps">Use assisted GPS</string>
     <!-- Security & location settings screen, setting summary when Assisted GPS check box is selected -->
@@ -2194,6 +2201,12 @@
     <string name="location_gps_source_summary">Choose to use either an external Bluetooth GPS antenna or the internal GPS antenna as location provider</string>
     <string name="location_gps_source_notification_title">Alert</string>
     <string name="location_gps_source_notification">The GPS source has been switched! GPS will be disabled. Please re-enable before use!</string>
+    <!-- [CHAR LIMIT=45] Label for turning on/off location access completely. -->
+    <string name="location_access_title">Access to my location</string>
+    <!-- [CHAR LIMIT=none] Description text for location access switch -->
+    <string name="location_access_summary">Let apps that have asked your permission use your location information</string>
+    <!-- [CHAR LIMIT=45] Section heading for location sources -->
+    <string name="location_sources_heading">Location sources</string>
 
     <!-- About --> <skip />
     <!-- Main settings screen, setting title for the user to go into the About phone screen -->
