@@ -4410,7 +4410,7 @@
 
     <!-- Clock Options -->
     <string name="clock">Clock</string>
-    <string name="header_summary_clock">Clock location, AM/PM style, date</string>
+    <string name="header_summary_clock">Clock location, AM/PM style</string>
     <string name="title_statusbar_clock">Statusbar Clock</string>
     <string name="clock_title_enable">Clock style</string>
     <string name="title_clock_ampm_entries">AM/PM style</string>
