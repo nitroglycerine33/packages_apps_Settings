@@ -43,11 +43,13 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     private static final String KEY_NAVIGATION_BAR = "navigation_bar";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_CLOCK_OPTIONS = "statusbar_clock";
+    private static final String KEY_CLOCK_TABLET = "clock_tablet";
 
     private ListPreference mFontSizePref;
     private PreferenceScreen mPhoneDrawer;
     private PreferenceScreen mTabletDrawer;
     private PreferenceScreen mClockOptions;
+    private PreferenceScreen mClockTablet;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -62,6 +64,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         mPhoneDrawer = (PreferenceScreen) findPreference(KEY_NOTIFICATION_DRAWER);
         mTabletDrawer = (PreferenceScreen) findPreference(KEY_NOTIFICATION_DRAWER_TABLET);
         mClockOptions = (PreferenceScreen) findPreference(KEY_CLOCK_OPTIONS);
+        mClockTablet = (PreferenceScreen) findPreference(KEY_CLOCK_TABLET);
 
         if (Utils.isTablet(getActivity())) {
             if (mPhoneDrawer != null) {
@@ -71,6 +74,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         } else {
             if (mTabletDrawer != null) {
                 getPreferenceScreen().removePreference(mTabletDrawer);
+		getPreferenceScreen().removePreference(mClockTablet);
             }
         }
 
