@@ -38,9 +38,11 @@ public class NavBarSettings extends SettingsPreferenceFragment {
     private static final String TAG = "NavBarSettings";
     private static final String KEY_NAVIGATION_ADVANCED = "navigation_bar_advanced";
     private static final String KEY_NAVIGATION_BAR = "navigation_bar";
+    private static final String KEY_NAVIGATION_BAR_S3 = "navigation_bar_s3";
 
     private PreferenceScreen mNavigationBar;
     private PreferenceScreen mNavigationBarAdvanced;
+    private PreferenceScreen mNavigationBarS3;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -51,6 +53,7 @@ public class NavBarSettings extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.navbar_settings);
 
         mNavigationBar = (PreferenceScreen) findPreference(KEY_NAVIGATION_BAR);
+	mNavigationBarS3 = (PreferenceScreen) findPreference(KEY_NAVIGATION_BAR_S3);
         mNavigationBarAdvanced = (PreferenceScreen) findPreference(KEY_NAVIGATION_ADVANCED);
 
         IWindowManager windowManager = IWindowManager.Stub.asInterface(

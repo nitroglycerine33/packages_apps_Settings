@@ -4372,7 +4372,14 @@
     <string name="combined_bar_auto_hide_summary">Allow combined bar to hide when showing a fullscreen app</string>
 
     <!-- Navigation Bar  -->
+    <string name="combined_navigation_bar_title">@string/navigation_bar_title</string>
     <string name="navigation_bar_title">Navigation bar</string>
+    <string name="navigation_bar_show">Show Navigation Bar</string>
+    <string name="hw_keys_title">Hardware Keys</string>
+    <string name="key_menu_enabled">Menu Key Enabled</string>
+    <string name="key_back_enabled">Back Key Enabled</string>
+    <string name="key_home_enabled">Home Key Enabled</string>
+    <string name="navigation_bar_reboot_message">Reboot required</string>
     <string name="navbar_buttons_title">Navigation bar buttons</string>
     <string name="navbar_advanced_title">Navigation bar customizer</string>
     <string name="color_settings">Color Settings</string>
