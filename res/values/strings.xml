@@ -4417,7 +4417,8 @@
 
     <!-- Clock Options -->
     <string name="clock">Clock</string>
-    <string name="header_summary_clock">Clock location, AM/PM style</string>
+    <string name="header_summary_clock">Clock location, AM/PM style, alarm clock</string>
+    <string name="header_summary_clock_tablet">Show/hide clock, AM/PM style</string>
     <string name="title_statusbar_clock">Statusbar Clock</string>
     <string name="clock_title_enable">Clock style</string>
     <string name="title_clock_ampm_entries">AM/PM style</string>
@@ -4500,6 +4501,8 @@
     <string name="status_bar_battery_status_fatty">Fatty</string>
     <string name="status_bar_battery_status_digital">Digital</string>
     <string name="status_bar_battery_status_hidden">Hidden</string>
+    <string name="enable_alarm_icon_title">Enable alarm icon</string>
+    <string name="enable_alarm_icon__summary">After disabling or enabling, you must toggle your alarms for it take affect</string>
 
     <string name="lock_screen_title">Lock screen</string>
 

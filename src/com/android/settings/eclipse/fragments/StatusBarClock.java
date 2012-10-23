@@ -19,9 +19,11 @@ import com.android.settings.Utils;
 public class StatusBarClock extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
+    private static final String PREF_ALARM_ENABLE = "alarm";
     private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock_style";
 
+    CheckBoxPreference mAlarm;
     private ListPreference mStatusBarClockStyle;
     private ListPreference mStatusBarAmPm;
 
@@ -36,6 +38,10 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
 
         mStatusBarClockStyle = (ListPreference) prefSet.findPreference(STATUS_BAR_CLOCK_STYLE);
         mStatusBarAmPm = (ListPreference) prefSet.findPreference(STATUS_BAR_AM_PM);
+
+        mAlarm = (CheckBoxPreference) findPreference(PREF_ALARM_ENABLE);
+        mAlarm.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_SHOW_ALARM, 1) == 1);
 
         try {
             if (Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
@@ -59,6 +65,17 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
         mStatusBarAmPm.setOnPreferenceChangeListener(this);
 
     }
+
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+            Preference preference) {
+        if (preference == mAlarm) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_SHOW_ALARM, checked ? 1 : 0);
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mStatusBarClockStyle) {
