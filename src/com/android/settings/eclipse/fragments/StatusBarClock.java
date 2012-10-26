@@ -13,19 +13,21 @@ import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.eclipse.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
 public class StatusBarClock extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String PREF_ALARM_ENABLE = "alarm";
-    private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
-    private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock_style";
+    private static final String PREF_ENABLE = "clock_style";
+    private static final String PREF_AM_PM_STYLE = "clock_am_pm_style";
+    private static final String PREF_CLOCK_WEEKDAY = "clock_weekday";
 
     CheckBoxPreference mAlarm;
-    private ListPreference mStatusBarClockStyle;
-    private ListPreference mStatusBarAmPm;
+    ListPreference mClockStyle;
+    ListPreference mClockAmPmstyle;
+    ListPreference mClockWeekday;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,34 +38,27 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
 
 	PreferenceScreen prefSet = getPreferenceScreen();
 
-        mStatusBarClockStyle = (ListPreference) prefSet.findPreference(STATUS_BAR_CLOCK_STYLE);
-        mStatusBarAmPm = (ListPreference) prefSet.findPreference(STATUS_BAR_AM_PM);
-
         mAlarm = (CheckBoxPreference) findPreference(PREF_ALARM_ENABLE);
         mAlarm.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_SHOW_ALARM, 1) == 1);
 
-        try {
-            if (Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.TIME_12_24) == 24) {
-                mStatusBarAmPm.setEnabled(false);
-                mStatusBarAmPm.setSummary(R.string.status_bar_am_pm_info);
-            }
-        } catch (SettingNotFoundException e ) {
-        }
+        mClockStyle = (ListPreference) findPreference(PREF_ENABLE);
+        mClockStyle.setOnPreferenceChangeListener(this);
+        mClockStyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_STYLE,
+                1)));
 
-        int statusBarClockStyle = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_CLOCK_STYLE, 1);
-        mStatusBarClockStyle.setValue(String.valueOf(statusBarClockStyle));
-        mStatusBarClockStyle.setSummary(mStatusBarClockStyle.getEntry());
-        mStatusBarClockStyle.setOnPreferenceChangeListener(this);
+        mClockAmPmstyle = (ListPreference) findPreference(PREF_AM_PM_STYLE);
+        mClockAmPmstyle.setOnPreferenceChangeListener(this);
+        mClockAmPmstyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE,
+                2)));
 
-        int statusBarAmPm = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_AM_PM, 2);
-        mStatusBarAmPm.setValue(String.valueOf(statusBarAmPm));
-        mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntry());
-        mStatusBarAmPm.setOnPreferenceChangeListener(this);
-
+        mClockWeekday = (ListPreference) findPreference(PREF_CLOCK_WEEKDAY);
+        mClockWeekday.setOnPreferenceChangeListener(this);
+        mClockWeekday.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_WEEKDAY,
+                0)));
     }
 
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
@@ -76,23 +71,23 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mStatusBarClockStyle) {
-            int statusBarClockStyle = Integer.valueOf((String) newValue);
-            int index = mStatusBarClockStyle.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_CLOCK_STYLE, statusBarClockStyle);
-            mStatusBarClockStyle.setSummary(mStatusBarClockStyle.getEntries()[index]);
-            return true;
-        } else if (preference == mStatusBarAmPm) {
-            int statusBarAmPm = Integer.valueOf((String) newValue);
-            int index = mStatusBarAmPm.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_AM_PM, statusBarAmPm);
-            mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntries()[index]);
-            return true;
+        boolean result = false;
+
+        if (preference == mClockAmPmstyle) {
+            int val = Integer.parseInt((String) newValue);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE, val);
+        } else if (preference == mClockStyle) {
+            int val = Integer.parseInt((String) newValue);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_STYLE, val);
+        } else if (preference == mClockWeekday) {
+            int val = Integer.parseInt((String) newValue);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_WEEKDAY, val);
         }
-        return false;
+        return result;
     }
 }

@@ -5,24 +5,30 @@
     <PreferenceCategory
         android:title="@string/status_bar_clock_title">
 
-        <CheckBoxPreference
-            android:key="alarm"
-            android:title="@string/enable_alarm_icon_title"
-            android:summary="@string/enable_alarm_icon__summary" />
+    <CheckBoxPreference
+        android:key="alarm"
+        android:title="@string/enable_alarm_icon_title"
+        android:summary="@string/enable_alarm_icon__summary" />
 
-       <ListPreference
-            android:key="status_bar_clock_style"
-            android:title="@string/status_bar_clock_style_title"
-            android:entries="@array/entries_status_bar_clock_style"
-            android:entryValues="@array/values_status_bar_clock_style"
-            android:persistent="false" />
+	
+    <ListPreference
+	android:entries="@array/clock_style_entries"
+	android:entryValues="@array/clock_style_values"
+	android:key="clock_style"
+	android:title="@string/clock_title_enable" />
 
-        <ListPreference
-            android:key="status_bar_am_pm"
-            android:dialogTitle="@string/status_bar_am_pm_title"
-            android:title="@string/status_bar_am_pm_title"
-            android:entries="@array/entries_status_bar_am_pm"
-            android:entryValues="@array/values_status_bar_am_pm" />
+    <ListPreference
+	android:entries="@array/clock_ampm_entries"
+	android:entryValues="@array/clock_ampm_values"
+	android:key="clock_am_pm_style"
+	android:title="@string/title_clock_ampm_entries" />
+
+    <ListPreference
+	android:key="clock_weekday"
+	android:title="@string/enable_clock_weekday"
+	android:summary="@string/enable_clock_weekday_summary"
+	android:entries="@array/clock_weekday_entries"
+	android:entryValues="@array/clock_weekday_values" />
 
     </PreferenceCategory>
 
