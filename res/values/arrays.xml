@@ -1612,6 +1612,7 @@
 
     <string-array name="lcd_density_stock_values" translatable="false">
         <item>160</item>
+        <item>213</item>
         <item>240</item>
         <item>320</item>
     </string-array>
