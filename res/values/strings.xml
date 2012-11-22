@@ -4401,6 +4401,30 @@
     <!--Eclipse Settings Headers -->
     <string name="header_category_eclipse">ECLIPSE SETTINGS</string>
     <string name="launcher_settings_title">Launcher</string>
+    <string name="system_settings_title">System</string>
+    <string name="system_interface_title">System interface</string>
+
+    <!--System Settings Headers -->
+    <string name="status_bar_title">Status bar</string>
+    <string name="combined_status_bar_title">@string/status_bar_title</string>
+    <string name="status_bar_summary">Customize battery type, signal text</string>
+
+    <!--Statusbar Settings-->
+    <string name="status_bar_general_title">General</string>
+    <string name="status_bar_signal_text_title">Signal status style</string>
+    <string name="status_bar_signal_text_show_bars">Icon (default)</string>
+    <string name="status_bar_signal_text_show_text">Text</string>
+    <string name="status_bar_signal_text_hidden">Hidden</string>
+    <string name="status_bar_battery_title">Battery status style</string>
+    <string name="status_bar_battery">Battery</string>
+    <string name="status_bar_battery_status_icon">Icon (default)</string>
+    <string name="status_bar_battery_status_percentage">Percentage</string>
+    <string name="status_bar_battery_status_circle">Circle</string>
+    <string name="status_bar_battery_status_circle_percentage">Circle with percentage</string>
+    <string name="status_bar_battery_status_skinny_bar">Skinny bar</string>
+    <string name="status_bar_battery_status_fatty">Fatty</string>
+    <string name="status_bar_battery_status_digital">Digital</string>
+    <string name="status_bar_battery_status_hidden">Hidden</string>
 
     <!--End Eclipse settings -->
 </resources>

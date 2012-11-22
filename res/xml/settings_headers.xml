@@ -61,6 +61,13 @@
     <!-- ECLIPSE SETTINGS -->
     <header android:title="@string/header_category_eclipse" />
 
+    <!-- System -->
+    <header
+        android:id="@+id/system_settings"
+        android:icon="@drawable/ic_eclipse_system"
+        android:fragment="com.android.settings.SystemSettings"
+        android:title="@string/system_settings_title" />
+
     <!-- Launcher -->
     <header
         android:id="@+id/launcher_settings"

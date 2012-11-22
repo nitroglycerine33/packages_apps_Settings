@@ -1250,6 +1250,10 @@
             </intent-filter>
         </activity>
 
+	<!--Eclipse Activities-->
+	<activity android:name=".SystemSettings" />
+	<activity android:name=".StatusBar" />
+
         <activity android:name="RadioInfo" android:label="@string/phone_info_label"
             android:process="com.android.phone">
             <intent-filter>
