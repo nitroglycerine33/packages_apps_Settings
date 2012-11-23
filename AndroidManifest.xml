@@ -1251,8 +1251,15 @@
         </activity>
 
 	<!--Eclipse Activities-->
-	<activity android:name=".SystemSettings" />
+        <activity android:name="BatteryTextColor"
+            android:label="@string/battery_text_color"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 	<activity android:name=".StatusBar" />
+	<activity android:name=".SystemSettings" />
 
         <activity android:name="RadioInfo" android:label="@string/phone_info_label"
             android:process="com.android.phone">
