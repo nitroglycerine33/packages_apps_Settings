@@ -33,7 +33,7 @@
             android:key="battery_text"
             android:title="Use battery text" >
         </CheckBoxPreference>
-
+<!--
         <PreferenceScreen
             android:key="battery_text_color"
             android:title="@string/battery_text_color">
@@ -42,7 +42,7 @@
                 android:targetClass="com.android.settings.BatteryTextColor"
                 android:targetPackage="com.android.settings" />
         </PreferenceScreen>
-
+-->
         <CheckBoxPreference
             android:key="battery_bar"
             android:title="@string/battery_bar" >
