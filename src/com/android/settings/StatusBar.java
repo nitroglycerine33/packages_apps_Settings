@@ -39,7 +39,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String BATTERY_TEXT = "battery_text";
     private static final String BATTERY_BAR = "battery_bar";
     private static final String BATTERY_BAR_COLOR = "battery_bar_color";
-    private static final String BATTERY_TEXT_COLOR = "battery_text_color";
+//    private static final String BATTERY_TEXT_COLOR = "battery_text_color";
 
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarCmSignal;
@@ -47,7 +47,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private CheckBoxPreference mBattBar;
     private ColorPickerPreference mBattBarColor;
 
-    PreferenceScreen mBattColor;
+//    PreferenceScreen mBattColor;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,8 +67,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mBattBar.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUSBAR_BATTERY_BAR, 0) == 1);
 
-        mBattColor = (PreferenceScreen) findPreference(BATTERY_TEXT_COLOR);
-        mBattColor.setEnabled(mBattText.isChecked());
+//        mBattColor = (PreferenceScreen) findPreference(BATTERY_TEXT_COLOR);
+//        mBattColor.setEnabled(mBattText.isChecked());
 
         mBattBarColor = (ColorPickerPreference) prefSet.findPreference(BATTERY_BAR_COLOR);
         mBattBarColor.setOnPreferenceChangeListener(this);
@@ -91,12 +91,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 //       }
     }
 
-    private void updateBatteryTextToggle(boolean bool) {
-        if (bool)
-            mBattColor.setEnabled(true);
-        else
-            mBattColor.setEnabled(false);
-    }
+//    private void updateBatteryTextToggle(boolean bool) {
+//        if (bool)
+//            mBattColor.setEnabled(true);
+//        else
+//            mBattColor.setEnabled(false);
+//    }
 
     private void updateBatteryBarToggle(boolean bool) {
         if (bool)
@@ -139,7 +139,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             value = mBattText.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.BATTERY_TEXT, value ? 1 : 0);
-            updateBatteryTextToggle(value);
+//            updateBatteryTextToggle(value);
             return true;
         } else if (preference == mBattBar) {
             value = mBattBar.isChecked();
