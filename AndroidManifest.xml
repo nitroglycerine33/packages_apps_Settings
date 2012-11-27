@@ -1260,6 +1260,8 @@
         </activity>
 	<activity android:name=".StatusBar" />
 	<activity android:name=".SystemSettings" />
+        <activity android:name=".cyanogenmod.PowerWidget" />
+
 
         <activity android:name="RadioInfo" android:label="@string/phone_info_label"
             android:process="com.android.phone">
