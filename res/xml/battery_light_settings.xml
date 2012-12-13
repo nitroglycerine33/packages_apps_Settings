@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:key="general_section"
+        android:title="@string/notification_light_general_title">
+
+        <CheckBoxPreference
+            android:key="battery_light"
+            android:title="@string/battery_light_title"
+            android:persistent="false" />
+
+        <CheckBoxPreference
+            android:key="battery_low_pulse"
+            android:title="@string/battery_low_pulse_title"
+            android:persistent="false" />
+
+        </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="colors_list"
+        android:title="@string/battery_light_list_title" >
+
+        <com.android.settings.notificationlight.ApplicationLightPreference
+            android:key="low_color"
+            android:title="@string/battery_light_low_color_title"
+            android:persistent="false" />
+
+        <com.android.settings.notificationlight.ApplicationLightPreference
+            android:key="medium_color"
+            android:title="@string/battery_light_medium_color_title"
+            android:persistent="false" />
+
+        <com.android.settings.notificationlight.ApplicationLightPreference
+            android:key="full_color"
+            android:title="@string/battery_light_full_color_title"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

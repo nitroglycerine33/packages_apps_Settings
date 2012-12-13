@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/performance_settings_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceScreen
+        android:key="processor"
+        android:fragment="com.android.settings.eclipse.Processor"
+        android:title="@string/processor_title"
+        android:summary="@string/processor_summary" />
+
+    <PreferenceScreen
+        android:key="ioscheduler"
+        android:fragment="com.android.settings.eclipse.IOScheduler"
+        android:title="@string/io_scheds_title"
+        android:summary="@string/io_scheds_summary" />
+
+    <PreferenceScreen
+        android:key="memory_management"
+        android:fragment="com.android.settings.eclipse.MemoryManagement"
+        android:title="@string/memory_management_title"
+        android:summary="@string/memory_management_summary" />
+
+    <CheckBoxPreference
+        android:key="pref_use_16bpp_alpha"
+        android:title="@string/pref_use_16bpp_alpha_title"
+        android:summary="@string/pref_use_16bpp_alpha_summary" />
+
+    <ListPreference
+        android:key="pref_use_dithering"
+        android:persistent="false"
+        android:dialogTitle="@string/pref_use_dithering_title"
+        android:title="@string/pref_use_dithering_title"
+        android:entries="@array/dithering_entries"
+        android:entryValues="@array/dithering_values"/>
+
+</PreferenceScreen>
