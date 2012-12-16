@@ -72,7 +72,7 @@
         android:id="@+id/system_settings"
         android:icon="@drawable/ic_settings_system"
         android:fragment="com.android.settings.eclipse.SystemSettings"
-        android:title="@string/system_settings_title" />
+        android:title="@string/system_interface_title" />
 	
     <!-- Themes -->
     <header
