@@ -32,9 +32,20 @@
                 android:targetClass="com.android.settings.SetFullBackupPassword" />
     </PreferenceScreen>
 
-    <CheckBoxPreference 
-        android:key="keep_screen_on" 
-        android:title="@string/keep_screen_on" 
+    <CheckBoxPreference
+        android:key="enable_adb"
+        android:title="@string/enable_adb"
+        android:summary="@string/enable_adb_summary"/>
+
+    <CheckBoxPreference
+        android:key="adb_over_network"
+        android:title="@string/adb_over_network"
+        android:summary="@string/adb_over_network_summary"
+        android:dependency="enable_adb"/>
+
+    <CheckBoxPreference
+        android:key="keep_screen_on"
+        android:title="@string/keep_screen_on"
         android:summary="@string/keep_screen_on_summary"/>
 
     <ListPreference
@@ -49,6 +60,13 @@
         android:title="@string/enforce_read_external_title"
         android:summary="@string/enforce_read_external_summary" />
 
+    <ListPreference
+        android:key="root_access"
+        android:title="@string/root_access"
+        android:persistent="false"
+        android:entries="@array/root_access_entries"
+        android:entryValues="@array/root_access_values" />
+
     <PreferenceCategory android:key="debug_debugging_category"
             android:title="@string/debug_debugging_category">
 
@@ -56,6 +74,23 @@
             android:key="enable_adb"
             android:title="@string/enable_adb"
             android:summary="@string/enable_adb_summary"/>
+
+        <CheckBoxPreference
+            android:key="adb_notify"
+            android:title="@string/adb_notify"
+            android:summary="@string/adb_notify_summary"
+            android:dependency="enable_adb"/>
+
+        <com.android.settings.HostnamePreference
+            android:key="device_hostname"
+            android:title="@string/device_hostname"
+            android:dialogTitle="@string/device_hostname"
+            android:positiveButtonText="@string/wifi_save"
+            android:negativeButtonText="@string/wifi_cancel"
+            android:selectAllOnFocus="true"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions"
+            android:persistent="false" />
 
         <CheckBoxPreference
             android:key="bugreport_in_power"
@@ -222,6 +257,11 @@
             android:title="@string/show_all_anrs"
             android:summary="@string/show_all_anrs_summary"/>
 
-     </PreferenceCategory>
+        <CheckBoxPreference
+            android:key="kill_app_longpress_back"
+            android:title="@string/kill_app_longpress_back"
+            android:summary="@string/kill_app_longpress_back_summary"/>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
