@@ -24,6 +24,13 @@
         android:fragment="com.android.settings.eclipse.StatusBar"
 	android:summary="@string/status_bar_summary"
         android:title="@string/status_bar_title" />
+	
+    <PreferenceScreen
+        android:key="statusbar_clock"
+	android:icon="@drawable/ic_eclipse_systemui"
+        android:fragment="com.android.settings.eclipse.fragments.StatusBarClock"
+	android:summary="@string/header_summary_clock"
+        android:title="@string/clock" />
 
     <PreferenceScreen
         android:key="notification_drawer"

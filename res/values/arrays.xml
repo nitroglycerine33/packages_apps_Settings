@@ -1059,13 +1059,38 @@
         <item>5000</item>
     </string-array>
 
-    <string-array name="entries_status_bar_clock_style" translatable="false">
-	<item>@string/clock_style_noclock</item>
-	<item>@string/clock_style_right</item>
-	<item>@string/clock_style_center</item>
+    <!-- clock options -->
+    <string-array name="clock_style_entries">
+	<item>Right clock</item>
+	<item>Center clock</item>
+	<item>No clock</item>
     </string-array>
 
-    <string-array name="values_status_bar_clock_style" translatable="false">
+    <string-array name="clock_style_values" translatable="false">
+	<item>1</item>
+	<item>2</item>
+	<item>0</item>
+    </string-array>
+
+    <string-array name="clock_ampm_entries">
+	<item>Don\'t show</item>
+	<item>Small AM/PM</item>
+	<item>Regular AM/PM</item>
+    </string-array>
+
+    <string-array name="clock_ampm_values" translatable="false">
+	<item>2</item>
+	<item>1</item>
+	<item>0</item>
+    </string-array>
+
+    <string-array name="clock_weekday_entries">
+	<item>Don\'t show</item>
+	<item>Small weekday</item>
+	<item>Regular weekday</item>
+    </string-array>
+
+    <string-array name="clock_weekday_values" translatable="false">
 	<item>0</item>
 	<item>1</item>
 	<item>2</item>
@@ -1306,34 +1331,34 @@
     </string-array>
 
     <string-array name="pref_navigation_menu_entries">
-		<item>Right</item>
-		<item>Left</item>
-		<item>Both</item>
+	<item>Right</item>
+	<item>Left</item>
+	<item>Both</item>
         <item>Remove</item>
-	</string-array>
+    </string-array>
 
-	<string-array name="pref_navigation_menu_values">
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
+    <string-array name="pref_navigation_menu_values">
+	<item>0</item>
+	<item>1</item>
+	<item>2</item>
         <item>4</item>
-	</string-array>
+    </string-array>
 
-       <string-array name="pref_navigation_menu_display_entries">
-		<item>Default</item>
-		<item>Invisible Icons</item>
-		<item>Always Show</item>
-		<item>Both Behaviours</item>
-	</string-array>
+   <string-array name="pref_navigation_menu_display_entries">
+	<item>Default</item>
+	<item>Invisible Icons</item>
+	<item>Always Show</item>
+	<item>Both Behaviours</item>
+    </string-array>
 
-	<string-array name="pref_navigation_menu_display_values">
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
-		<item>3</item>
-	</string-array>
+    <string-array name="pref_navigation_menu_display_values">
+	<item>0</item>
+	<item>1</item>
+	<item>2</item>
+	<item>3</item>
+    </string-array>
 
-        <string-array name="glow_times_entries">
+    <string-array name="glow_times_entries">
         <item>Off</item>
         <item>Ultra Fast</item>
         <item>Fast</item>

@@ -19,9 +19,7 @@ import com.android.settings.Utils;
 
 public class StatusBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
-    private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
     private static final String STATUS_BAR_BATTERY = "status_bar_battery";
-    private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock_style";
     private static final String STATUS_BAR_SIGNAL = "status_bar_signal";
     private static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
     private static final String STATUS_BAR_CATEGORY_GENERAL = "status_bar_general";
@@ -29,16 +27,13 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String BATTERY_BAR = "battery_bar";
     private static final String BATTERY_BAR_COLOR = "battery_bar_color";
 
-    private ListPreference mStatusBarAmPm;
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarCmSignal;
-    private ListPreference mStatusBarClockStyle;
     private CheckBoxPreference mStatusBarNotifCount;
     private PreferenceCategory mPrefCategoryGeneral;
     private CheckBoxPreference mBattText;
     private CheckBoxPreference mBattBar;
     private ColorPickerPreference mBattBarColor;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,33 +43,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        mStatusBarClockStyle = (ListPreference) prefSet.findPreference(STATUS_BAR_CLOCK_STYLE);
-        mStatusBarAmPm = (ListPreference) prefSet.findPreference(STATUS_BAR_AM_PM);
         mStatusBarBattery = (ListPreference) prefSet.findPreference(STATUS_BAR_BATTERY);
         mStatusBarCmSignal = (ListPreference) prefSet.findPreference(STATUS_BAR_SIGNAL);
-
-        try {
-            if (Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.TIME_12_24) == 24) {
-                mStatusBarAmPm.setEnabled(false);
-                mStatusBarAmPm.setSummary(R.string.status_bar_am_pm_info);
-            }
-        } catch (SettingNotFoundException e ) {
-        }
-
-	int statusBarClockStyle = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-		Settings.System.STATUS_BAR_CLOCK_STYLE, 1);
-	mStatusBarClockStyle.setValue(String.valueOf(statusBarClockStyle));
-	mStatusBarClockStyle.setSummary(mStatusBarClockStyle.getEntry());
-	mStatusBarClockStyle.setOnPreferenceChangeListener(this);
-
-        int statusBarAmPm = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_AM_PM, 2);
-        mStatusBarAmPm.setValue(String.valueOf(statusBarAmPm));
-        mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntry());
-        mStatusBarAmPm.setOnPreferenceChangeListener(this);
 		
-		mBattText = (CheckBoxPreference) prefSet.findPreference(BATTERY_TEXT);
+	mBattText = (CheckBoxPreference) prefSet.findPreference(BATTERY_TEXT);
         mBattText.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.BATTERY_TEXT, 0) == 1);
 
@@ -118,21 +90,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         
-	if (preference == mStatusBarClockStyle) {
-	    int statusBarClockStyle = Integer.valueOf((String) newValue);
-	    int index = mStatusBarClockStyle.findIndexOfValue((String) newValue);
-	    Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-		    Settings.System.STATUS_BAR_CLOCK_STYLE, statusBarClockStyle);
-	    mStatusBarClockStyle.setSummary(mStatusBarClockStyle.getEntries()[index]);
-	return true;
-	} else if (preference == mStatusBarAmPm) {
-            int statusBarAmPm = Integer.valueOf((String) newValue);
-            int index = mStatusBarAmPm.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_AM_PM, statusBarAmPm);
-            mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntries()[index]);
-            return true;
-        } else if (preference == mStatusBarBattery) {
+	if (preference == mStatusBarBattery) {
             int statusBarBattery = Integer.valueOf((String) newValue);
             int index = mStatusBarBattery.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
