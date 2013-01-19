@@ -45,6 +45,16 @@
         android:title="@string/lock_screen_title"
 	android:summary="@string/lockscreen_summary"
         android:fragment="com.android.settings.eclipse.LockscreenInterface" />
+
+    <PreferenceScreen
+        android:key="lock_clock"
+	android:icon="@drawable/ic_eclipse_generalui"
+        android:title="@string/lock_clock_title"
+        android:summary="@string/lock_clock_summary">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.cyanogenmod.lockclock"
+                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+    </PreferenceScreen>
 	
     <PreferenceScreen
         android:key="power_menu"
