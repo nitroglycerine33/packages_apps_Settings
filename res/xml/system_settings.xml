@@ -62,8 +62,10 @@
 
     <PreferenceScreen
         android:key="hardware_keys"
-        android:fragment="com.android.settings.eclipse.HardwareKeys"
-        android:title="@string/hardware_keys_title" />
+	android:icon="@drawable/ic_eclipse_hardware_keys"
+        android:title="@string/hardware_keys_title"
+	android:summary="@string/hardware_keys_summary"
+	android:fragment="com.android.settings.eclipse.HardwareKeys" />
 
     <PreferenceScreen
         android:key="notification_pulse"
