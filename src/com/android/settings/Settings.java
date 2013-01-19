@@ -122,7 +122,9 @@ public class Settings extends PreferenceActivity
             R.id.system_section,
             R.id.date_time_settings,
             R.id.about_settings,
-            R.id.accessibility_settings
+            R.id.accessibility_settings,
+            R.id.interface_section,
+            R.id.launcher_settings
     };
 
     private SharedPreferences mDevelopmentPreferences;
@@ -433,7 +435,7 @@ public class Settings extends PreferenceActivity
                 launcherIntent.addCategory(Intent.CATEGORY_DEFAULT);
 
                 Intent launcherPreferencesIntent = new Intent(Intent.ACTION_MAIN);
-                launcherPreferencesIntent.addCategory("com.eclipse.category.LAUNCHER_PREFERENCES");
+                launcherPreferencesIntent.addCategory("com.cyanogenmod.category.LAUNCHER_PREFERENCES");
 
                 ActivityInfo defaultLauncher = getPackageManager().resolveActivity(launcherIntent, PackageManager.MATCH_DEFAULT_ONLY).activityInfo;
                 launcherPreferencesIntent.setPackage(defaultLauncher.packageName);
@@ -669,7 +671,7 @@ public class Settings extends PreferenceActivity
             int headerType = getHeaderType(header);
             View view = null;
 
-            if (convertView == null) {
+            if (convertView == null || headerType == HEADER_TYPE_SWITCH) {
                 holder = new HeaderViewHolder();
                 switch (headerType) {
                     case HEADER_TYPE_CATEGORY:

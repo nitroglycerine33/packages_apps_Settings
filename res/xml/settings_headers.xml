@@ -98,9 +98,9 @@
         android:title="@string/advanced_settings_title"
         android:icon="@drawable/ic_settings_advanced">
         <intent
-            android:action="com.eclipse.action.LAUNCH_DEVICE_SETTINGS"
-            android:targetPackage="com.eclipse.settings.device"
-            android:targetClass="com.eclipse.settings.device.DeviceSettings" />
+            android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
+            android:targetPackage="com.cyanogenmod.settings.device"
+            android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
     </header>
 
     <!-- DEVICE -->

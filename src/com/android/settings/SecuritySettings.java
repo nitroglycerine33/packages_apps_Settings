@@ -89,6 +89,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String HOME_UNLOCK_PREF = "home_unlock";
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
+    private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
 
     DevicePolicyManager mDPM;
 
@@ -118,6 +119,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private CheckBoxPreference mMenuUnlock;
     private CheckBoxPreference mHomeUnlock;
     private CheckBoxPreference mQuickUnlockScreen;
+    private ListPreference mSmsSecurityCheck;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -145,6 +147,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
             isCmSecurity = args.getBoolean("cm_security");
         }
         ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
+
+        // Add package manager to check if features are available
+        PackageManager pm = getPackageManager();
 
         // Add options for lock/unlock screen
         int resid = 0;
@@ -376,7 +381,16 @@ public class SecuritySettings extends SettingsPreferenceFragment
                     mToggleVerifyApps.setEnabled(false);
                 }
             }
-        }
+
+            boolean isTelephony = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
+            if (isTelephony) {
+                addPreferencesFromResource(R.xml.security_settings_app_eclipse);
+                mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
+                mSmsSecurityCheck.setOnPreferenceChangeListener(this);
+                int smsSecurityCheck = Integer.valueOf(mSmsSecurityCheck.getValue());
+                updateSmsSecuritySummary(smsSecurityCheck);
+            }
+         }
 
         return root;
     }
@@ -454,6 +468,11 @@ public class SecuritySettings extends SettingsPreferenceFragment
             }
         }
         mSlideLockTimeoutDelay.setSummary(entries[best]);
+    }
+
+    private void updateSmsSecuritySummary(int i) {
+        String message = getString(R.string.sms_security_check_limit_summary, i);
+        mSmsSecurityCheck.setSummary(message);
     }
 
     private void updateSlideAfterScreenOffSummary() {
@@ -707,6 +726,11 @@ public class SecuritySettings extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.SCREEN_LOCK_SLIDE_SCREENOFF_DELAY, slideScreenOffDelay);
             updateSlideAfterScreenOffSummary();
+        } else if (preference == mSmsSecurityCheck) {
+            int smsSecurityCheck = Integer.valueOf((String) value);
+            Settings.Global.putInt(getContentResolver(), Settings.Global.SMS_OUTGOING_CHECK_MAX_COUNT,
+                     smsSecurityCheck);
+            updateSmsSecuritySummary(smsSecurityCheck);
         }
         return true;
     }
