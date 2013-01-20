@@ -4547,8 +4547,8 @@
     <string name="system_interface_title">Interface</string>
     
     <!--- Lock clock -->
-    <string name="lock_clock_title">Clock widget</string>
-    <string name="lock_clock_summary">View or change how the \'Chronus\' widgets will display</string>
+    <string name="lock_clock_title">Chronus widget</string>
+    <string name="lock_clock_summary">View or change how the widgets will display</string>
     
     <!-- Performance Voltage Settings -->
     <string name="voltage_control">Voltage control</string>
