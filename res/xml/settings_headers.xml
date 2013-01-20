@@ -59,7 +59,8 @@
         android:icon="@drawable/empty_icon" />
 
     <!-- ECLIPSE SETTINGS -->
-    <header android:title="@string/header_category_eclipse" />
+    <header android:id="@+id/interface_section"
+    	android:title="@string/header_category_eclipse" />
 
     <!-- Launcher -->
     <header
