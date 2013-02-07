@@ -17,11 +17,11 @@
         android:key="lockscreen_targets"
         android:summary="@string/lockscreen_target_summary"
         android:title="@string/lockscreen_target_title" />
-<!--
+
      <PreferenceScreen
         android:fragment="com.android.settings.eclipse.LockscreenButtons"
         android:key="lockscreen_buttons"
         android:title="@string/lockscreen_buttons_title"
         android:summary="@string/lockscreen_buttons_summary" />
--->
+
 </PreferenceScreen>
